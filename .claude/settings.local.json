@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "Bash(where:*)",
-      "Bash(pandoc:*)"
+      "Bash(pandoc:*)",
+      "Bash(start \"\" \"C:\\\\code\\\\resume\\\\index.html?profile=instructor\")"
     ]
   }
 }

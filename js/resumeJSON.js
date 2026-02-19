@@ -3,14 +3,14 @@ var resumeJSON = {
     summaryVariants: {
         "qa-lead": "Senior QA Test Lead with 18+ years driving test strategy, UAT execution, and quality process implementation across healthcare, government, and gaming systems. Expert in building QA frameworks from scratch, leading distributed teams through Agile adoption, and serving as the critical bridge between development, stakeholders, and end-users. Deep expertise in accessibility testing (508 compliance), requirements traceability, and translating complex business needs into comprehensive test coverage. Trilingual communicator (English, Spanish, ASL) with proven ability to influence stakeholders and deliver clarity in ambiguous environments.",
         "business-analyst": "Quality and Business Analysis professional with 18+ years ensuring what gets built matches what the business needs. Background rooted in QA leadership with extensive BA-adjacent experience: requirements documentation, process analysis, UAT coordination, and stakeholder communication. Built documentation frameworks from scratch, led Agile transitions, and served as subject matter expert translating complex healthcare and government system requirements for cross-functional teams. Experienced in gap analysis, change management, and creating clarity in ambiguous environments. Trilingual communicator (English, Spanish, ASL) skilled at bridging technical and non-technical stakeholders.",
-        "instructor": "Instructor summary"
+        "instructor": "Training and enablement professional with 20+ years developing people and processes across technical environments. Background spans formal classroom instruction in digital media and software applications through embedded training roles in QA, healthcare IT, and game development — coaching teams through Agile adoption, leading knowledge transfer sessions as subject matter expert, and building onboarding programs that reduced ramp-up time. Skilled at breaking down complex technical concepts for diverse audiences, from adult learners in workshop settings to cross-functional engineering teams. Trilingual communicator (English, Spanish, ASL) with a track record of mentoring individuals, standardizing processes, and creating documentation frameworks that scale beyond any single team member."
     },
     // Role-specific title/label variants for ATS optimization
     labelVariants: {
         "default": "Quality & Business Analyst | Requirements & Process Specialist | UAT Leadership",
         "qa-lead": "Senior QA Test Lead | UAT & Test Strategy | Healthcare & Government Systems",
         "business-analyst": "Business Analyst | Requirements & Process Specialist | Healthcare & Government",
-        "instructor": "Instructor | Tutor"
+        "instructor": "Training & Enablement Specialist | Knowledge Transfer | Technical Mentoring"
     },
     basics: {
         name: "John Escobedo",
@@ -88,7 +88,7 @@ var resumeJSON = {
                 "Collaborated with automation engineers to validate Cucumber/Selenium scripts, catching requirement-execution gaps before automated tests went into rotation.",
                 "Built requirements traceability documentation that mapped every business need to test coverage across web, mainframe, and mobile platforms."
             ],
-            tags: ["qa-lead", "business-analyst"]
+            tags: ["qa-lead", "business-analyst", "instructor"]
         },
         {
             name: "Freelance",
@@ -140,7 +140,7 @@ var resumeJSON = {
                 "Created and maintained product documentation to support new feature releases and ensure consistent understanding of requirements.",
                 "Owned end-to-end validation for the flagship web application, gating every release across browsers and mobile platforms."
             ],
-            tags: ["qa-lead", "business-analyst"]
+            tags: ["qa-lead", "business-analyst", "instructor"]
         },
         {
             name: "Luna Data Solutions",
@@ -192,7 +192,7 @@ var resumeJSON = {
                 "Developed initial test strategy and comprehensive documentation to ensure software met business and regulatory requirements before release.",
                 "Executed functional, regression, and HIPAA compliance validation across all supported mobile devices, ensuring every release met regulatory standards before deployment."
             ],
-            tags: ["qa-lead"]
+            tags: ["qa-lead", "instructor"]
         },
         {
             name: "Luna Data Solutions",
@@ -209,7 +209,7 @@ var resumeJSON = {
                 "Executed daily validation of game builds for core functionality, gameplay mechanics, and UI integrity.",
                 "Promoted to Test Lead based on documentation quality and team leadership skills."
             ],
-            tags: ["qa-lead"]
+            tags: ["qa-lead", "instructor"]
         },
         {
             name: "Kick Butt Coffee",
@@ -340,7 +340,7 @@ var resumeJSON = {
                 "Coordinated audio editing, syncing dialogue and sound to animated sequences.",
                 "Supported web presence through website maintenance and updates."
             ],
-            tags: ["design"]
+            tags: ["design", "instructor"]
         },
         {
             name: "UT Performing Arts Center",
@@ -640,7 +640,7 @@ var resumeJSON = {
         },
         {
             name: "Leadership & Process",
-            tags: ["qa-lead", "business-analyst"],
+            tags: ["qa-lead", "business-analyst", "instructor"],
             keywords: [
                 "QA Process Implementation",
                 "Team Leadership",
@@ -688,7 +688,7 @@ var resumeJSON = {
         },
         {
             name: "Interpersonal & Collaboration",
-            tags: ["business-analyst"],
+            tags: ["business-analyst", "instructor"],
             keywords: [
                 "Clear Communication",
                 "Curiosity",
@@ -700,7 +700,7 @@ var resumeJSON = {
         },
         {
             name: "Accessibility & Inclusive Design",
-            tags: ["qa-lead", "business-analyst"],
+            tags: ["qa-lead", "business-analyst", "instructor"],
             keywords: [
                 "508 Compliance Testing",
                 "WCAG Awareness",
@@ -724,7 +724,7 @@ var resumeJSON = {
         },
         {
             name: "Tools & Technologies",
-            tags: ["qa-lead", "business-analyst"],
+            tags: ["qa-lead", "business-analyst", "instructor"],
             keywords: [
                 "GitHub",
                 "Chrome Developer Tools",

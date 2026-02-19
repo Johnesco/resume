@@ -63,8 +63,10 @@ const RESUME_CONFIG = {
             tags: ["instructor"],
             summaryKey: "instructor",
             labelKey: "instructor",
-            workHistoryYears: 99,
-            additionalHistoryYears: null,
+            // 15 years full detail (2011+: GeekSI, EverlyWell, DocbookMD, Luna)
+            // + 15 more condensed (2005 and earlier: Diva Productions, teaching jobs)
+            workHistoryYears: 15,
+            additionalHistoryYears: 15,
             skillsFormat: "list"
         }
     }
