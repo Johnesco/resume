@@ -1,15 +1,15 @@
 var resumeJSON = {
     // Role-specific summary variants for ATS optimization
     summaryVariants: {
-        "qa-lead": "Senior QA Test Lead with 18+ years driving test strategy, UAT execution, and quality process implementation across healthcare, government, and gaming systems. Expert in building QA frameworks from scratch, leading distributed teams through Agile adoption, and serving as the critical bridge between development, stakeholders, and end-users. Deep expertise in accessibility testing (508 compliance), requirements traceability, and translating complex business needs into comprehensive test coverage. Trilingual communicator (English, Spanish, ASL) with proven ability to influence stakeholders and deliver clarity in ambiguous environments.",
-        "business-analyst": "Quality and Business Analysis professional with 18+ years ensuring what gets built matches what the business needs. Background rooted in QA leadership with extensive BA-adjacent experience: requirements documentation, process analysis, UAT coordination, and stakeholder communication. Built documentation frameworks from scratch, led Agile transitions, and served as subject matter expert translating complex healthcare and government system requirements for cross-functional teams. Experienced in gap analysis, change management, and creating clarity in ambiguous environments. Trilingual communicator (English, Spanish, ASL) skilled at bridging technical and non-technical stakeholders.",
-        "instructor": "Training and enablement professional with 20+ years developing people and processes across technical environments. Background spans formal classroom instruction in digital media and software applications through embedded training roles in QA, healthcare IT, and game development — coaching teams through Agile adoption, leading knowledge transfer sessions as subject matter expert, and building onboarding programs that reduced ramp-up time. Skilled at breaking down complex technical concepts for diverse audiences, from adult learners in workshop settings to cross-functional engineering teams. Trilingual communicator (English, Spanish, ASL) with a track record of mentoring individuals, standardizing processes, and creating documentation frameworks that scale beyond any single team member."
+        "qa-lead": "Quality and business analysis professional with 18+ years building the foundations that make software shippable. I specialize in establishing QA functions from zero—introducing version control discipline, release candidate processes, and documentation standards to teams shipping without structure. Background spans healthcare, gaming, e-commerce, and government systems, with deep expertise in requirements documentation, UAT leadership, and cross-functional collaboration. Trilingual communicator (English, Spanish, ASL) with a track record of influencing stakeholders, driving change, and enabling teams to catch defects locally instead of chasing emergencies in production.",
+        "business-analyst": "Business Analyst with 18+ years ensuring what gets built matches what the business needs. I specialize in establishing quality foundations from zero—introducing release discipline, documentation standards, and structured validation to teams shipping without process. Career spans healthcare, government, and technology systems, with deep expertise in requirements documentation, process analysis, UAT coordination, and stakeholder communication. Experienced in gap analysis, change management, and enabling teams to catch defects locally instead of chasing emergencies in production. Trilingual communicator (English, Spanish, ASL) skilled at bridging technical and non-technical stakeholders.",
+        "instructor": "Training and enablement professional with 20+ years developing people and processes across technical environments. Experience spans formal classroom instruction in digital media and software applications, embedded training in QA and healthcare IT, Agile coaching for distributed teams, and building onboarding programs that reduced ramp-up time. Skilled at breaking down complex technical concepts for diverse audiences, from adult learners in workshop settings to cross-functional engineering teams. Trilingual communicator (English, Spanish, ASL) with a track record of mentoring individuals, standardizing processes, and creating documentation that scales beyond any single team member."
     },
     // Role-specific title/label variants for ATS optimization
     labelVariants: {
         "default": "Quality & Business Analyst | Requirements & Process Specialist | UAT Leadership",
         "qa-lead": "Senior QA Test Lead | UAT & Test Strategy | Healthcare & Government Systems",
-        "business-analyst": "Business Analyst | Requirements & Process Specialist | Healthcare & Government",
+        "business-analyst": "Business Analyst | Requirements & Stakeholder Management | Healthcare & Government Systems",
         "instructor": "Training & Enablement Specialist | Knowledge Transfer | Technical Mentoring"
     },
     basics: {
@@ -20,7 +20,7 @@ var resumeJSON = {
         phone: "(512) 299-3269",
         website: "",
         summary:
-            "Quality and business analysis professional with 18+ years bridging technical teams, stakeholders, and end-users across healthcare, gaming, e-commerce, and government systems. I specialize in requirements documentation, process analysis, UAT leadership, and cross-functional collaboration. I've built QA and documentation frameworks from scratch, led Agile transitions, and served as a subject matter expert translating complex business needs into testable, actionable requirements. Trilingual communicator (English, Spanish, ASL) with a track record of stakeholder influence, change management, and delivering clarity in ambiguous environments.",
+            "Quality and business analysis professional with 18+ years building the foundations that make software shippable. I specialize in establishing QA functions from zero—introducing version control discipline, release candidate processes, and documentation standards to teams shipping without structure. Background spans healthcare, gaming, e-commerce, and government systems, with deep expertise in requirements documentation, UAT leadership, and cross-functional collaboration. Trilingual communicator (English, Spanish, ASL) with a track record of influencing stakeholders, driving change, and enabling teams to catch defects locally instead of chasing emergencies in production.",
         location: {
             address: "16506 Fetching",
             postalCode: "78653",
@@ -64,7 +64,7 @@ var resumeJSON = {
                 "Served as communication bridge between operations and engineering for Apptronik's humanoid robot development, translating observed behaviors into actionable documentation and establishing process standards in a fast-paced, ambiguous environment.",
             highlights: [
                 "Translated observed robot behaviors into clear, actionable bug reports that accelerated issue resolution for engineering teams.",
-                "Proactively authored troubleshooting protocols and SOPs where none existed, producing reference materials the broader team adopted as standard practice.",
+                "Authored startup, shutdown, and emergency shutdown procedures for 2 robot models where none existed, reducing new tester ramp-up time by approximately 50% and establishing reference materials adopted as team standard.",
                 "Bridged operations and engineering communication, keeping both teams aligned on priorities and findings.",
                 "Reached full productivity in a novel role with minimal onboarding, independently navigating a complex robotics domain.",
                 "Reduced physical testing environment setup time by 75% by standardizing the preparation pattern, ensuring consistent and repeatable conditions for data collection."
@@ -82,7 +82,8 @@ var resumeJSON = {
                 "Senior contractor providing requirements analysis, UAT leadership, and quality assurance across multiple mission-critical VA healthcare projects. Subject matter expert for complex clinical modules, facilitating knowledge transfer and driving process standardization across distributed teams.",
             highlights: [
                 "Became the go-to SME for the Traumatic Brain Injury module, running knowledge transfer sessions that enabled cross-functional teams to navigate complex healthcare domain requirements.",
-                "Championed the transition from Waterfall to Agile, coaching distributed teams through adoption and gaining leadership buy-in, improving delivery predictability across projects.",
+                "Championed the transition from Waterfall to Agile, introducing release discipline and predictable delivery cycles to teams accustomed to ad-hoc shipping practices.",
+                "Advocated for and implemented code freeze and release candidate practices, shifting teams from reactive firefighting to proactive quality control.",
                 "Drove standardization of testing practices and documentation across multiple VA projects, building consensus among distributed teams and reducing onboarding time for new analysts.",
                 "Advocated for accessibility as a core quality metric, leading 508 compliance initiatives and educating team members on inclusive design requirements.",
                 "Collaborated with automation engineers to validate Cucumber/Selenium scripts, catching requirement-execution gaps before automated tests went into rotation.",
@@ -114,11 +115,11 @@ var resumeJSON = {
             startDate: "2018-06-05",
             endDate: "2018-10-01",
             summary:
-                "Partnered with engineering and product leadership to establish quality processes and design cross-team workflows for a health tech startup's secure patient portal.",
+                "Partnered with engineering and product leadership to establish quality processes and design cross-team workflows for a health tech startup's secure patient portal during a period of rapid organizational change.",
             highlights: [
                 "Designed a unified JIRA workflow, facilitating smoother cross-team collaboration and visibility into release status.",
                 "Assessed release risks and communicated go/no-go recommendations to product and engineering leadership, balancing speed-to-market with quality.",
-                "Defined the initial QA process and validation criteria for the health test service platform, setting the standard for how requirements would be verified.",
+                "Defined initial QA process and release validation criteria for a team shipping without formal quality gates, establishing standards that brought predictability to a fast-moving startup environment.",
                 "Mentored team members on effective documentation practices and quality standards to foster a culture of quality across the organization.",
                 "Validated releases across all major browsers and mobile devices, catching requirement gaps before production deployment."
             ],
@@ -134,7 +135,7 @@ var resumeJSON = {
             summary:
                 "As the sole QA resource, built comprehensive quality processes and test infrastructure for the company's flagship education assessment platform, earning credibility with development and product teams.",
             highlights: [
-                "Built credibility with development and product teams by demonstrating the value of structured requirements validation, ultimately integrating QA as a respected part of the SDLC.",
+                "Introduced foundational quality practices—version control discipline, release candidates, and structured validation—to a team shipping without formal QA process, establishing credibility that integrated quality as a respected part of the SDLC.",
                 "Created end-to-end test documentation spanning procedures, requirements traceability, and verification standards.",
                 "Improved developer-QA communication by introducing standardized user story and acceptance criteria templates, reducing ambiguity and accelerating delivery.",
                 "Created and maintained product documentation to support new feature releases and ensure consistent understanding of requirements.",
@@ -152,7 +153,7 @@ var resumeJSON = {
             summary:
                 "Contracted as QA Analyst for RetailMeNot, coordinating cross-team efforts for high-visibility e-commerce feature launches and aligning testing priorities with business objectives.",
             highlights: [
-                "Coordinated QA efforts across multiple teams for the high-visibility gift card feature launch, aligning testing priorities with business objectives and leadership expectations.",
+                "Coordinated QA efforts across multiple teams for the gift card feature launch supporting a $22M acquisition, aligning testing priorities with business objectives and leadership expectations.",
                 "Engineered custom JavaScript tools to validate site-wide analytics implementation and data integrity, ensuring business requirements were accurately captured.",
                 "Created standardized test documentation and data suites that eliminated inconsistencies across testing environments.",
                 "Responded to live production issues under pressure, triaging problems and communicating status updates to leadership during critical outages.",
@@ -170,8 +171,8 @@ var resumeJSON = {
             summary:
                 "Developed inaugural QA process for an accessibility-focused video interpreting platform, immersing in user community to ensure product truly met the needs of Deaf and hard-of-hearing users.",
             highlights: [
-                "Invested in learning American Sign Language and Deaf cultural norms to understand user needs and ensure the product truly served its community — a user research approach that informed requirements validation.",
-                "Established the company's first quality assurance function, defining test procedures and quality benchmarks for the Ruby on Rails web application.",
+                "Invested in learning American Sign Language and Deaf cultural norms to understand user needs and ensure the product truly served its community—a user research approach that informed requirements validation.",
+                "Established the company's first-ever quality assurance function from zero, defining test procedures and quality benchmarks that enabled the team to identify non-functional code blocking product delivery.",
                 "Managed full validation lifecycle including creating test plans, executing test runs, and reporting results to stakeholders for both web and mobile platforms.",
                 "Solved cross-platform testing limitations by implementing a VirtualBox-based solution, expanding test coverage to previously unreachable environments."
             ],
@@ -190,7 +191,7 @@ var resumeJSON = {
                 "Analyzed and documented HIPAA compliance requirements, ensuring application met strict regulatory standards for secure transmission of patient health information.",
                 "Grew the QA department from a solo operation to a full team, hiring, onboarding, and mentoring new analysts while codifying repeatable quality processes.",
                 "Developed initial test strategy and comprehensive documentation to ensure software met business and regulatory requirements before release.",
-                "Executed functional, regression, and HIPAA compliance validation across all supported mobile devices, ensuring every release met regulatory standards before deployment."
+                "Executed functional, regression, and HIPAA compliance validation across all supported mobile devices, including devising creative testing methods (simulating network outages via elevator rides) to catch edge cases missed by standard approaches."
             ],
             tags: ["qa-lead", "instructor"]
         },
