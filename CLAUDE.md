@@ -182,6 +182,22 @@ The `@media print` styles in `css/style.css` optimize PDF output for ATS parsing
 - **Black text** - All colors forced to black for reliable extraction
 - **Compact spacing** - Tighter margins for efficient page use
 
+## Writing Portfolio (Inform 7)
+
+The `writing/` subfolder contains an interactive fiction writing portfolio built with Inform 7.
+
+**Do not build or edit Inform 7 source files here.** The source of truth for the Buttons story is `C:\code\inform7\projects\buttons\story.ni`. All Inform 7 authoring, compilation, and story.ni changes should go through the central hub at `C:\code\inform7\`. See `C:\code\inform7\CLAUDE.md` for syntax reference, conventions, and build instructions.
+
+Any `.ni` files found in this project are **read-only snapshots for display**, not for compilation or editing.
+
+Files in `writing/`:
+- `index.html` — Web-playable interpreter (Quixe)
+- `buttons.ulx.js` — Compiled game file (generated from story.ni)
+- `lib/` — Quixe/GlkOte runtime libraries
+- `proof.html` — Proofing copy of the stories
+- `writing.html` — Original writing portfolio page
+- `media/` — Portfolio assets (PDFs, etc.)
+
 ## Notes
 
 - No build process - edit and refresh

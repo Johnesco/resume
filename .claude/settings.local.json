@@ -3,7 +3,8 @@
     "allow": [
       "Bash(where:*)",
       "Bash(pandoc:*)",
-      "Bash(start \"\" \"C:\\\\code\\\\resume\\\\index.html?profile=instructor\")"
+      "Bash(start \"\" \"C:\\\\code\\\\resume\\\\index.html?profile=instructor\")",
+      "Bash(ls:*)"
     ]
   }
 }
