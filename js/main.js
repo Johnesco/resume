@@ -46,8 +46,7 @@ function renderResume() {
     const contactHTML = `
         ${resumeJSON.basics.email}<br>
         ${resumeJSON.basics.phone}<br>
-        ${resumeJSON.basics.location.address ? resumeJSON.basics.location.address + '<br>' : ''}
-        ${resumeJSON.basics.location.city}, ${resumeJSON.basics.location.region} ${resumeJSON.basics.location.postalCode}
+        ${resumeJSON.basics.location.city}, ${resumeJSON.basics.location.region}
     `;
     document.querySelector('.contact-info').innerHTML = contactHTML;
 

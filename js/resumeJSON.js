@@ -22,10 +22,7 @@ var resumeJSON = {
         summary:
             "Quality and business analysis professional with 18+ years building the foundations that make software shippable. I specialize in establishing QA functions from zero—introducing version control discipline, release candidate processes, and documentation standards to teams shipping without structure. Background spans healthcare, gaming, e-commerce, and government systems, with deep expertise in requirements documentation, UAT leadership, and cross-functional collaboration. Trilingual communicator (English, Spanish, ASL) with a track record of influencing stakeholders, driving change, and enabling teams to catch defects locally instead of chasing emergencies in production.",
         location: {
-            address: "16506 Fetching",
-            postalCode: "78653",
-            city: "Manor",
-            countryCode: "US",
+            city: "Austin",
             region: "Texas"
         },
         profiles: [
@@ -646,6 +643,7 @@ var resumeJSON = {
                 "QA Process Implementation",
                 "Team Leadership",
                 "Process Standardization",
+                "SDLC",
                 "Agile/Scrum",
                 "Production Support",
                 "Remote Team Management"
