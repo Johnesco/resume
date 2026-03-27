@@ -19,7 +19,7 @@ const RESUME_CONFIG = {
 
     // Default profile to use when no ?profile= parameter is specified
     // This should be one of the real profiles (not "default")
-    defaultProfile: "instructor",
+    defaultProfile: "qa-lead",
 
     // Role profiles - everything is profile-driven
     // Each profile has a `tags` array listing which tags it includes
