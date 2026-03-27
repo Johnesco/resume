@@ -66,7 +66,7 @@ var resumeJSON = {
                 "Reached full productivity in a novel role with minimal onboarding, independently navigating a complex robotics domain.",
                 "Reduced physical testing environment setup time by 75% by standardizing the preparation pattern, ensuring consistent and repeatable conditions for data collection."
             ],
-            tags: ["qa-lead"]
+            tags: [""]
         },
         {
             name: "GeekSI",
