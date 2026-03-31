@@ -107,7 +107,7 @@ var resumeJSON = {
         {
             name: "EverlyWell",
             location: "Austin, TX",
-            position: "Senior QA Test Lead | Quality Assurance Tester",
+            position: "Senior QA Engineer | Quality Assurance Tester",
             website: "https://www.everlywell.com/",
             startDate: "2018-06-05",
             endDate: "2018-10-01",
@@ -143,7 +143,7 @@ var resumeJSON = {
         {
             name: "Luna Data Solutions",
             location: "Austin, TX",
-            position: "QA Tester | QA Analyst",
+            position: "QA Engineer | QA Analyst",
             website: "https://www.lunadatasolutions.com/",
             startDate: "2015-05-15",
             endDate: "2017-05-19",
@@ -151,7 +151,7 @@ var resumeJSON = {
                 "Contracted as QA Analyst for RetailMeNot, coordinating cross-team efforts for high-visibility e-commerce feature launches and aligning testing priorities with business objectives.",
             highlights: [
                 "Coordinated QA efforts across multiple teams for the gift card feature launch supporting a $22M acquisition, aligning testing priorities with business objectives and leadership expectations.",
-                "Built custom JavaScript tools to validate site-wide analytics implementation and data integrity, ensuring business requirements were accurately captured.",
+                "Engineered custom JavaScript tools to validate site-wide analytics implementation and data integrity, ensuring business requirements were accurately captured.",
                 "Created standardized test documentation and data suites that eliminated inconsistencies across testing environments.",
                 "Responded to live production issues under pressure, triaging problems and communicating status updates to leadership during critical outages.",
                 "Partnered with developers to enhance internal tooling, ensure a CI/CD workflow, and contribute improvements that increased team efficiency."
@@ -621,8 +621,7 @@ var resumeJSON = {
                 "Gap Analysis",
                 "Stakeholder Management",
                 "Change Management",
-                "Requirements Traceability",
-                "Detailed Specification Writing"
+                "Requirements Traceability"
             ]
         },
         {
@@ -634,8 +633,7 @@ var resumeJSON = {
                 "Problem-Solving",
                 "Critical Thinking",
                 "Root Cause Analysis",
-                "Troubleshooting",
-                "Complex Task Decomposition"
+                "Troubleshooting"
             ]
         },
         {
@@ -660,8 +658,7 @@ var resumeJSON = {
                 "User Acceptance Testing (UAT)",
                 "Test Planning",
                 "CI/CD Testing",
-                "Accessibility & 508 Testing",
-                "Output Verification & Validation"
+                "Accessibility & 508 Testing"
             ]
         },
         {
@@ -734,6 +731,18 @@ var resumeJSON = {
                 "JavaScript/HTML/CSS",
                 "Command Line Interfaces",
                 "Postman"
+            ]
+        },
+        {
+            name: "AI Collaboration & Prompting",
+            tags: ["qa-lead", "business-analyst"],
+            keywords: [
+                "Prompt Engineering",
+                "Detailed Specification Writing",
+                "Complex Task Decomposition",
+                "Iterative Refinement",
+                "Output Verification & Validation",
+                "AI Tools (ChatGPT, Claude, Midjourney)"
             ]
         },
         {
