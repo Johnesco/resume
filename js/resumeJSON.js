@@ -665,27 +665,17 @@ var resumeJSON = {
             ]
         },
         {
-            name: "AI Red Teaming & Evaluation",
+            name: "AI & Prompt Engineering",
             tags: ["qa-lead"],
             keywords: [
                 "Prompt Engineering & Optimization",
                 "AI Red Teaming & Adversarial Testing",
                 "LLM Output Validation & QA",
                 "Hallucination Detection & Fact-Checking",
-                "Safety & Bias Evaluation",
-                "Multi-model Evaluation (Claude, GPT, Gemini)",
-                "Conversational AI Testing"
-            ]
-        },
-        {
-            name: "AI Tools & Development",
-            tags: ["qa-lead"],
-            keywords: [
                 "LLM Prompt Pipeline Design",
                 "AI Workflow Automation",
                 "AI Pair Programming (Claude Code, Copilot)",
-                "Rapid AI Tool Adoption",
-                "Generative AI Applications"
+                "Rapid AI Tool Adoption"
             ]
         },
         {
