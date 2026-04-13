@@ -161,7 +161,7 @@ var resumeJSON = {
         {
             name: "Communication Services for the Deaf",
             location: "Austin, TX",
-            position: "QA Test Lead, QA Analyst",
+            position: "QA Test Lead | QA Analyst",
             website: "https://csd.org/",
             startDate: "2013-05-06",
             endDate: "2015-01-16",
