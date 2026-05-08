@@ -51,6 +51,15 @@ const RESUME_CONFIG = {
             // "list" = ATS-friendly comma-separated, "tags" = pill boxes (default)
             skillsFormat: "list"
         },
+        "qa-ai": {
+            tags: ["qa-ai"],
+            summaryKey: "qa-ai",
+            labelKey: "qa-ai",
+            // 10 years full detail + 10 more years condensed = 20 total
+            workHistoryYears: 10,
+            additionalHistoryYears: 10,
+            skillsFormat: "list"
+        },
         "business-analyst": {
             tags: ["business-analyst"],
             summaryKey: "business-analyst",

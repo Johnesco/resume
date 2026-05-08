@@ -2,6 +2,7 @@ var resumeJSON = {
     // Role-specific summary variants for ATS optimization
     summaryVariants: {
         "qa-lead": "Quality and business analysis professional with 18+ years building the foundations that make software shippable. I specialize in establishing QA functions from zero—introducing version control discipline, release candidate processes, and documentation standards to teams shipping without structure. Background spans healthcare, gaming, e-commerce, and government systems, with deep expertise in requirements documentation, UAT leadership, and cross-functional collaboration. Trilingual communicator (English, Spanish, ASL) with a track record of influencing stakeholders, driving change, and enabling teams to catch defects locally instead of chasing emergencies in production.",
+        "qa-ai": "Quality assurance professional with 18+ years of manual testing expertise across healthcare, government, e-commerce, and emerging AI systems. Career includes 5+ years of .NET and Java platform testing for VA healthcare applications and home loan processing systems, with hands-on API testing using SOAP and REST protocols via Postman. Daily JIRA and Confluence user with administration experience including workflow design, project configuration, and dashboard creation. Specialized in AI red teaming, LLM output validation, prompt engineering, and hallucination detection—bringing traditional QA discipline to emerging AI products. Proven track record of writing comprehensive test strategies and establishing QA processes from zero. Strong analytical thinker and trilingual communicator (English, Spanish, ASL) who bridges technical and business stakeholders to deliver quality outcomes.",
         "business-analyst": "Business Analyst with 18+ years ensuring what gets built matches what the business needs. I specialize in establishing quality foundations from zero—introducing release discipline, documentation standards, and structured validation to teams shipping without process. Career spans healthcare, government, and technology systems, with deep expertise in requirements documentation, process analysis, UAT coordination, and stakeholder communication. Experienced in gap analysis, change management, and enabling teams to catch defects locally instead of chasing emergencies in production. Trilingual communicator (English, Spanish, ASL) skilled at bridging technical and non-technical stakeholders.",
         "instructor": "Training and enablement professional with 20+ years developing people and processes across technical environments. Experience spans formal classroom instruction in digital media and software applications, embedded training in QA and healthcare IT, Agile coaching for distributed teams, and building onboarding programs that reduced ramp-up time. Skilled at breaking down complex technical concepts for diverse audiences, from adult learners in workshop settings to cross-functional engineering teams. Trilingual communicator (English, Spanish, ASL) with a track record of mentoring individuals, standardizing processes, and creating documentation that scales beyond any single team member."
     },
@@ -9,6 +10,7 @@ var resumeJSON = {
     labelVariants: {
         "default": "Quality & Business Analyst | Requirements & Process Specialist | UAT Leadership",
         "qa-lead": "Senior QA Test Lead | UAT & Test Strategy | Healthcare & Government Systems",
+        "qa-ai": "Senior QA Test Lead | AI Testing & LLM Validation | API & Platform Testing",
         "business-analyst": "Business Analyst | Requirements & Stakeholder Management | Healthcare & Government Systems",
         "instructor": "Training & Enablement Specialist | Knowledge Transfer | Technical Mentoring"
     },
@@ -35,6 +37,22 @@ var resumeJSON = {
     },
     work: [
         {
+            name: "Sharpee.net",
+            location: "Austin, TX (Remote)",
+            position: "Software Tester",
+            website: "https://sharpee.net/",
+            startDate: "2026-03-01",
+            summary:
+                "Performing manual exploratory and functional testing of new web-based software, identifying defects and submitting detailed bug reports to improve product quality.",
+            highlights: [
+                "Executing manual exploratory and functional testing of web applications, identifying and documenting defects with clear reproduction steps and expected vs. actual behavior.",
+                "Submitting detailed bug reports covering UI, functional, and cross-browser issues, enabling developers to quickly isolate and resolve problems.",
+                "Testing across multiple browsers and platforms to ensure consistent user experience and identify cross-platform compatibility issues.",
+                "Validating new feature implementations against design specifications and expected behavior, catching regressions before release."
+            ],
+            tags: ["qa-lead", "qa-ai"]
+        },
+        {
             name: "Freelance",
             location: "Austin, TX",
             position: "Karaoke Host",
@@ -51,10 +69,10 @@ var resumeJSON = {
             tags: ["event-host"]
         },
         {
-            name: "Insight Global",
+            name: "Apptronik (via Insight Global)",
             location: "Austin, TX",
             position: "Robot Tele-Operator",
-            website: "https://insightglobal.com/",
+            website: "https://apptronik.com/",
             startDate: "2025-07-01",
             endDate: "2025-09-11",
             summary:
@@ -66,7 +84,7 @@ var resumeJSON = {
                 "Reached full productivity in a novel role with minimal onboarding, independently navigating a complex robotics domain.",
                 "Reduced physical testing environment setup time by 75% by standardizing the preparation pattern, ensuring consistent and repeatable conditions for data collection."
             ],
-            tags: [""]
+            tags: ["qa-ai"]
         },
         {
             name: "GeekSI",
@@ -81,12 +99,17 @@ var resumeJSON = {
                 "Became the go-to SME for the Traumatic Brain Injury module, running knowledge transfer sessions that enabled cross-functional teams to navigate complex healthcare domain requirements.",
                 "Championed the transition from Waterfall to Agile, introducing release discipline and predictable delivery cycles to teams accustomed to ad-hoc shipping practices.",
                 "Advocated for and implemented code freeze and release candidate practices, shifting teams from reactive firefighting to proactive quality control.",
+                "Used JIRA and Confluence daily to manage test cases, track defects, document requirements, and coordinate with distributed teams across multiple VA projects.",
+                "Performed SOAP API testing for VA home loan processing systems, populating and validating service queries to ensure data integrity across .NET-based applications.",
+                "Conducted REST API testing using Postman to verify backend services and data contracts for Java-based healthcare modules.",
+                "Executed manual test strategies across .NET and Java platforms including functional, regression, integration, and end-to-end testing for clinical healthcare applications.",
+                "Developed and maintained comprehensive test strategies encompassing UAT, regression, smoke, sanity, and 508 compliance testing for VA healthcare systems.",
                 "Drove standardization of testing practices and documentation across multiple VA projects, building consensus among distributed teams and reducing onboarding time for new analysts.",
                 "Advocated for accessibility as a core quality metric, leading 508 compliance initiatives and educating team members on inclusive design requirements.",
                 "Collaborated with automation engineers to validate Cucumber/Selenium scripts, catching requirement-execution gaps before automated tests went into rotation.",
                 "Built requirements traceability documentation that mapped every business need to test coverage across web, mainframe, and mobile platforms."
             ],
-            tags: ["qa-lead", "business-analyst", "instructor"]
+            tags: ["qa-lead", "qa-ai", "business-analyst", "instructor"]
         },
         {
             name: "Freelance",
@@ -114,13 +137,14 @@ var resumeJSON = {
             summary:
                 "Partnered with engineering and product leadership to establish quality processes and design cross-team workflows for a health tech startup's secure patient portal during a period of rapid organizational change.",
             highlights: [
-                "Designed a unified JIRA workflow, facilitating smoother cross-team collaboration and visibility into release status.",
+                "Served as JIRA administrator, designing a unified JIRA workflow with custom issue types, screens, and transitions that facilitated smoother cross-team collaboration and visibility into release status.",
+                "Managed JIRA project configurations including permission schemes, notification settings, and dashboard creation to support QA and development workflows.",
                 "Assessed release risks and communicated go/no-go recommendations to product and engineering leadership, balancing speed-to-market with quality.",
                 "Defined initial QA process and release validation criteria for a team shipping without formal quality gates, establishing standards that brought predictability to a fast-moving startup environment.",
                 "Mentored team members on effective documentation practices and quality standards to foster a culture of quality across the organization.",
                 "Validated releases across all major browsers and mobile devices, catching requirement gaps before production deployment."
             ],
-            tags: ["qa-lead", "business-analyst"]
+            tags: ["qa-lead", "qa-ai", "business-analyst"]
         },
         {
             name: "YouScience",
@@ -138,7 +162,7 @@ var resumeJSON = {
                 "Created and maintained product documentation to support new feature releases and ensure consistent understanding of requirements.",
                 "Owned end-to-end validation for the flagship web application, gating every release across browsers and mobile platforms."
             ],
-            tags: ["qa-lead", "business-analyst", "instructor"]
+            tags: ["qa-lead", "qa-ai", "business-analyst", "instructor"]
         },
         {
             name: "Luna Data Solutions",
@@ -156,7 +180,7 @@ var resumeJSON = {
                 "Responded to live production issues under pressure, triaging problems and communicating status updates to leadership during critical outages.",
                 "Partnered with developers to enhance internal tooling, ensure a CI/CD workflow, and contribute improvements that increased team efficiency."
             ],
-            tags: ["qa-lead"]
+            tags: ["qa-lead", "qa-ai"]
         },
         {
             name: "Communication Services for the Deaf",
@@ -173,7 +197,7 @@ var resumeJSON = {
                 "Managed full validation lifecycle including creating test plans, executing test runs, and reporting results to stakeholders for both web and mobile platforms.",
                 "Solved cross-platform testing limitations by implementing a VirtualBox-based solution, expanding test coverage to previously unreachable environments."
             ],
-            tags: ["qa-lead", "business-analyst"]
+            tags: ["qa-lead", "qa-ai", "business-analyst"]
         },
         {
             name: "DocbookMD",
@@ -190,7 +214,7 @@ var resumeJSON = {
                 "Developed initial test strategy and comprehensive documentation to ensure software met business and regulatory requirements before release.",
                 "Executed functional, regression, and HIPAA compliance validation across all supported mobile devices, including devising creative testing methods (simulating network outages via elevator rides) to catch edge cases missed by standard approaches."
             ],
-            tags: ["qa-lead", "instructor"]
+            tags: ["qa-lead", "qa-ai", "instructor"]
         },
         {
             name: "Luna Data Solutions",
@@ -207,7 +231,7 @@ var resumeJSON = {
                 "Executed daily validation of game builds for core functionality, gameplay mechanics, and UI integrity.",
                 "Promoted to Test Lead based on documentation quality and team leadership skills."
             ],
-            tags: ["qa-lead", "instructor"]
+            tags: ["qa-lead", "qa-ai", "instructor"]
         },
         {
             name: "Kick Butt Coffee",
@@ -241,7 +265,7 @@ var resumeJSON = {
                 "Delivered high-volume support via live chat and ticket systems, balancing efficiency with genuine care for each user's experience.",
                 "Restored compromised accounts with precision, adhering to strict security and data integrity protocols."
             ],
-            tags: ["qa-lead"]
+            tags: ["qa-lead", "qa-ai"]
         },
         {
             name: "Linden Lab",
@@ -259,7 +283,7 @@ var resumeJSON = {
                 "Served as frontline First Responder, managing in-world emergencies, enforcing Terms of Service, and resolving user conflicts.",
                 "Earned three promotions in three years through consistent performance, initiative, and demonstrated ability to take on increasing responsibility."
             ],
-            tags: ["qa-lead"]
+            tags: ["qa-lead", "qa-ai"]
         },
         {
             name: "Super Happy Fun Fun",
@@ -276,7 +300,7 @@ var resumeJSON = {
                 "Developed strategies for efficient testing across disparate hardware and software platforms.",
                 "Maintained quality oversight across the full product lifecycle, from initial builds through production and post-release patches."
             ],
-            tags: ["qa-lead"]
+            tags: ["qa-lead", "qa-ai"]
         },
         {
             name: "Aspyr Media",
@@ -294,7 +318,7 @@ var resumeJSON = {
                 "Caught localization and UI text errors through exhaustive proofreading, improving the polish of shipped titles.",
                 "Validated major titles including Call of Duty 2 and Civilization IV through functional, compatibility, and regression testing, contributing to stable Mac launches."
             ],
-            tags: ["qa-lead"]
+            tags: ["qa-lead", "qa-ai"]
         },
         {
             name: "LOC Consultants",
@@ -612,8 +636,78 @@ var resumeJSON = {
     ],
     skills: [
         {
+            name: "Test Strategies",
+            tags: ["qa-ai"],
+            keywordLimit: 0,
+            keywords: [
+                "UAT",
+                "Regression",
+                "Agile",
+                "Functional",
+                "Integration",
+                "Smoke",
+                "Sanity",
+                "Exploratory",
+                "Black Box",
+                "System",
+                "Usability",
+                "End-to-end",
+                "API",
+                "Acceptance",
+                "508 Compliance",
+                "HIPAA Compliance",
+                "Cross-browser",
+                "Cross-platform",
+                "Mobile",
+                "Desktop",
+                "Web Application",
+                "Release Validation",
+                "Data Integrity",
+                "Compatibility",
+                "Verification",
+                "Validation Testing"
+            ]
+        },
+        {
+            name: "Manual Testing & QA Process",
+            tags: ["qa-ai"],
+            keywordLimit: 0,
+            keywords: [
+                "Manual Testing",
+                "Test Planning",
+                "Test Case Design",
+                "Bug Reporting",
+                "Test Strategy Writing",
+                "QA Process Implementation"
+            ]
+        },
+        {
+            name: "API Testing",
+            tags: ["qa-ai"],
+            keywordLimit: 0,
+            keywords: [
+                "SOAP API Testing",
+                "REST API Testing",
+                "Postman",
+                "Chrome Developer Tools"
+            ]
+        },
+        {
+            name: "Platform Testing",
+            tags: ["qa-ai"],
+            keywordLimit: 0,
+            keywords: [
+                ".NET Platform Testing",
+                "Java Platform Testing",
+                "Web Applications",
+                "Mobile (iOS/Android)",
+                "Desktop (PC/Mac/Linux)",
+                "Cross-browser/Cross-platform"
+            ]
+        },
+        {
             name: "Business Analysis",
-            tags: ["qa-lead", "business-analyst"],
+            tags: ["qa-lead", "qa-ai", "business-analyst"],
             keywords: [
                 "Requirements Elicitation",
                 "User Stories & Acceptance Criteria",
@@ -640,7 +734,7 @@ var resumeJSON = {
         },
         {
             name: "Leadership & Process",
-            tags: ["qa-lead", "business-analyst", "instructor"],
+            tags: ["qa-lead", "qa-ai", "business-analyst", "instructor"],
             keywords: [
                 "QA Process Implementation",
                 "Team Leadership",
@@ -653,7 +747,7 @@ var resumeJSON = {
         },
         {
             name: "Testing Methodologies & Frameworks",
-            tags: ["qa-lead", "business-analyst"],
+            tags: ["qa-lead", "qa-ai", "business-analyst"],
             keywords: [
                 "Agile Testing",
                 "Regression Testing",
@@ -666,7 +760,7 @@ var resumeJSON = {
         },
         {
             name: "AI & Prompt Engineering",
-            tags: ["qa-lead"],
+            tags: ["qa-lead", "qa-ai"],
             keywords: [
                 "Prompt Engineering & Optimization",
                 "AI Red Teaming & Adversarial Testing",
@@ -680,12 +774,12 @@ var resumeJSON = {
         },
         {
             name: "Test Management & Documentation",
-            tags: ["qa-lead"],
+            tags: ["qa-lead", "qa-ai"],
             keywords: [
                 "JIRA/Xray",
+                "JIRA Administration",
+                "Confluence",
                 "TestRail",
-                "Test Case Design",
-                "Bug Reporting",
                 "SOP Development",
                 "Risk Management"
             ]
@@ -716,7 +810,7 @@ var resumeJSON = {
         },
         {
             name: "Accessibility & Inclusive Design",
-            tags: ["qa-lead", "business-analyst", "instructor"],
+            tags: ["qa-lead", "qa-ai", "business-analyst", "instructor"],
             keywords: [
                 "508 Compliance Testing",
                 "WCAG Awareness",
@@ -728,7 +822,7 @@ var resumeJSON = {
         },
         {
             name: "Platforms & Environments",
-            tags: ["qa-lead"],
+            tags: ["qa-lead", "qa-ai"],
             keywords: [
                 "Web Applications",
                 "Mobile (iOS/Android)",
@@ -740,7 +834,7 @@ var resumeJSON = {
         },
         {
             name: "Tools & Technologies",
-            tags: ["qa-lead", "business-analyst", "instructor"],
+            tags: ["qa-lead", "qa-ai", "business-analyst", "instructor"],
             keywords: [
                 "GitHub",
                 "Chrome Developer Tools",
@@ -752,7 +846,7 @@ var resumeJSON = {
         },
         {
             name: "Industry Expertise",
-            tags: ["qa-lead", "business-analyst"],
+            tags: ["qa-lead", "qa-ai", "business-analyst"],
             keywords: [
                 "Healthcare & Telehealth",
                 "Gaming & Entertainment",
@@ -764,7 +858,7 @@ var resumeJSON = {
         },
         {
             name: "Office and Image Suites",
-            tags: ["qa-lead", "business-analyst", "instructor"],
+            tags: ["qa-lead", "qa-ai", "business-analyst", "instructor"],
             keywords: [
                 "Adobe Creative Suite",
                 "Office 365: Teams, Word, Excel, PowerPoint, Outlook",

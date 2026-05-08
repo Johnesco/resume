@@ -143,7 +143,13 @@
             html += 'SKILLS\n\n';
             filteredSkills.forEach(skill => {
                 // When profile is active, limit keywords to ~4 for ATS readability
-                const keywords = profile ? skill.keywords.slice(0, 4) : skill.keywords;
+                // Per-skill keywordLimit override (0 = show all)
+                let keywords;
+                if (skill.keywordLimit !== undefined) {
+                    keywords = skill.keywordLimit > 0 ? skill.keywords.slice(0, skill.keywordLimit) : skill.keywords;
+                } else {
+                    keywords = profile ? skill.keywords.slice(0, 4) : skill.keywords;
+                }
                 html += `${skill.name}: ${oxfordComma(keywords)}\n\n`;
             });
 

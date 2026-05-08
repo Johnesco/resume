@@ -88,7 +88,9 @@ function renderSkills(skills) {
     if (!skills || skills.length === 0) return '';
 
     return skills.map(skill => {
-        const limitedKeywords = skill.keywords.slice(0, 6);
+        // Per-skill keywordLimit override; 0 means show all
+        const limit = skill.keywordLimit !== undefined ? skill.keywordLimit : 6;
+        const limitedKeywords = limit > 0 ? skill.keywords.slice(0, limit) : skill.keywords;
         const tags = limitedKeywords.map(kw =>
             `<span class="skill-tag">${kw}</span>`
         ).join('');
@@ -119,8 +121,9 @@ function renderSkillsList(skills) {
     if (!skills || skills.length === 0) return '';
 
     return skills.map(skill => {
-        // Limit to ~4 keywords for ATS readability
-        const limitedKeywords = skill.keywords.slice(0, 4);
+        // Limit to ~4 keywords for ATS readability; per-skill keywordLimit overrides (0 = show all)
+        const limit = skill.keywordLimit !== undefined ? skill.keywordLimit : 4;
+        const limitedKeywords = limit > 0 ? skill.keywords.slice(0, limit) : skill.keywords;
         const keywordList = limitedKeywords.join(', ');
 
         return `
