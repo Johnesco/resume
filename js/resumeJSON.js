@@ -39,16 +39,17 @@ var resumeJSON = {
         {
             name: "Sharpee.net",
             location: "Austin, TX (Remote)",
-            position: "Software Tester",
+            position: "Software Tester (Volunteer)",
             website: "https://sharpee.net/",
             startDate: "2026-03-01",
             summary:
-                "Performing manual exploratory and functional testing of new web-based software, identifying defects and submitting detailed bug reports to improve product quality.",
+                "Performing end-to-end exploratory and feature-level testing of new web-based software, contributing test infrastructure and documentation improvements directly to the codebase, and producing standardized failure reports that accelerate developer triage.",
             highlights: [
-                "Executing manual exploratory and functional testing of web applications, identifying and documenting defects with clear reproduction steps and expected vs. actual behavior.",
-                "Submitting detailed bug reports covering UI, functional, and cross-browser issues, enabling developers to quickly isolate and resolve problems.",
-                "Testing across multiple browsers and platforms to ensure consistent user experience and identify cross-platform compatibility issues.",
-                "Validating new feature implementations against design specifications and expected behavior, catching regressions before release."
+                "Conducting end-to-end, feature-oriented exploratory testing across browsers and platforms, validating complete user workflows rather than isolated component behavior.",
+                "Identifying critical silent-failure defects, including a case where the application returned blank responses with no error signaling, a class of bug that scripted suites pass without detection and requires exploratory observation to surface.",
+                "Authoring a custom output template for the project's bespoke in-house test system, standardizing failure reports so any reader, regardless of QA background, can immediately see what failed and why.",
+                "Leading maintenance of a 17-step user tutorial, cascading consistent updates across all steps whenever foundational changes occur to keep documentation aligned with current product behavior.",
+                "Working directly in the project codebase via a Git pull-request workflow, reading source to inform test scenarios and submitting improvements back rather than only filing tickets."
             ],
             tags: ["qa-lead", "qa-ai"]
         },
