@@ -107,6 +107,7 @@ var resumeJSON = {
                 "Developed and maintained comprehensive test strategies encompassing UAT, regression, smoke, sanity, and 508 compliance testing for VA healthcare systems.",
                 "Drove standardization of testing practices and documentation across multiple VA projects, building consensus among distributed teams and reducing onboarding time for new analysts.",
                 "Advocated for accessibility as a core quality metric, leading 508 compliance initiatives and educating team members on inclusive design requirements.",
+                "Performed hands-on screen reader validation with JAWS and NVDA on VA clinical interfaces, surfacing accessibility issues not catchable through visual inspection alone.",
                 "Collaborated with automation engineers to validate Cucumber/Selenium scripts, catching requirement-execution gaps before automated tests went into rotation.",
                 "Built requirements traceability documentation that mapped every business need to test coverage across web, mainframe, and mobile platforms."
             ],
@@ -815,7 +816,8 @@ var resumeJSON = {
             keywords: [
                 "508 Compliance Testing",
                 "WCAG Awareness",
-                "Assistive Technology Familiarity",
+                "JAWS Screen Reader",
+                "NVDA Screen Reader",
                 "Inclusive Product Advocacy",
                 "American Sign Language (Conversational)",
                 "Deaf Cultural Competency"
