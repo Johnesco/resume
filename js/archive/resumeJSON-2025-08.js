@@ -3,7 +3,7 @@ var resumeJSON = {
     "name": "John Escobedo",
     "label": "SQA Test Manager, Test Lead, and Analyst",
     "picture": "",
-    "email": "letmeshowyou@gmail.com",
+    "email": "john.esco.work@gmail.com",
     "phone": "(512) 299-3269",
     "website": "",
     "summary": "Senior QA Engineer with 18+ years of experience spanning entertainment, healthcare, government, and consumer technology sectors. Specialized in establishing QA processes for emerging companies and leading quality initiatives for mission-critical government systems. Expert in full-stack testing including web applications, mobile apps, desktop software, and gaming platforms. Strong background in Agile methodologies, accessibility compliance, and cross-functional team leadership. Trilingual: English, Spanish, and American Sign Language.",

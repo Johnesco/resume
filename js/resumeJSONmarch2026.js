@@ -16,7 +16,7 @@ var resumeJSON = {
         name: "John Escobedo",
         label: "Quality & Business Analyst | Requirements & Process Specialist | UAT Leadership",
         picture: "",
-        email: "letmeshowyou@gmail.com",
+        email: "john.esco.work@gmail.com",
         phone: "(512) 299-3269",
         website: "",
         summary:
