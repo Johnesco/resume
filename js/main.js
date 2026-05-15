@@ -165,8 +165,10 @@ function renderEarlierExperience(jobs) {
                     <span class="earlier-dates">${dateRange}</span>
                 </div>
                 <div class="earlier-job-details">
-                    ${job.summary ? `<p class="earlier-summary">${job.summary}</p>` : ''}
-                    ${highlightsHTML ? `<div class="earlier-highlights">${highlightsHTML}</div>` : ''}
+                    <div class="earlier-job-details-inner">
+                        ${job.summary ? `<p class="earlier-summary">${job.summary}</p>` : ''}
+                        ${highlightsHTML ? `<div class="earlier-highlights">${highlightsHTML}</div>` : ''}
+                    </div>
                 </div>
             </div>
         `;

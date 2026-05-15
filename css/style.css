@@ -329,18 +329,23 @@ strong {
     font-size: 0.9rem;
 }
 
-/* Hidden details by default - with slide animation */
+/* Hidden details by default - with slide animation using grid-row trick */
 .earlier-job-details {
-    max-height: 0;
+    display: grid;
+    grid-template-rows: 0fr;
     overflow: hidden;
     padding: 0;
     font-size: 0.9rem;
     opacity: 0;
-    transition: max-height 0.3s ease-out, opacity 0.3s ease-out, padding 0.3s ease-out;
+    transition: grid-template-rows 0.3s ease-out, opacity 0.3s ease-out, padding 0.3s ease-out;
+}
+
+.earlier-job-details > .earlier-job-details-inner {
+    min-height: 0; /* required so the grid track can collapse to 0 */
 }
 
 .earlier-job.expanded .earlier-job-details {
-    max-height: 500px;
+    grid-template-rows: 1fr;
     opacity: 1;
     padding: 0.5rem 0 0.25rem 0;
 }
