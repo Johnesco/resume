@@ -77,6 +77,16 @@ const RESUME_CONFIG = {
             workHistoryYears: 15,
             additionalHistoryYears: 15,
             skillsFormat: "list"
+        },
+        "cs": {
+            tags: ["customer-service"],
+            summaryKey: "cs",
+            labelKey: "cs",
+            // 16 years full detail (covers Karaoke, DJ, Kick Butt, Blizzard, Linden Lab)
+            // + 10 more condensed (LOC, GoDance, Computer Discovery, Weddings)
+            workHistoryYears: 16,
+            additionalHistoryYears: 10,
+            skillsFormat: "list"
         }
     }
 };

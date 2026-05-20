@@ -641,7 +641,7 @@
         // Format profile name for display
         // Recognizes common acronyms (QA, AI, UAT, etc.) and uppercases them
         function formatProfileName(name) {
-            const acronyms = new Set(['qa', 'ai', 'uat', 'api', 'ba', 'pm', 'ux', 'ui', 'sdlc', 'ats']);
+            const acronyms = new Set(['qa', 'ai', 'uat', 'api', 'ba', 'pm', 'ux', 'ui', 'sdlc', 'ats', 'cs']);
             return name.split('-').map(word =>
                 acronyms.has(word.toLowerCase())
                     ? word.toUpperCase()
