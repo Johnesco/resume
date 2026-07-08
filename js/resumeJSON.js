@@ -1,30 +1,30 @@
 var resumeJSON = {
     // Role-specific summary variants for ATS optimization
     summaryVariants: {
-        "qa-lead": "Quality and business analysis professional with 18+ years building the foundations that make software shippable. I specialize in establishing QA functions from zero—introducing version control discipline, release candidate processes, and documentation standards to teams shipping without structure. Background spans healthcare, gaming, e-commerce, and government systems, with deep expertise in requirements documentation, UAT leadership, and cross-functional collaboration. Trilingual communicator (English, Spanish, ASL) with a track record of influencing stakeholders, driving change, and enabling teams to catch defects locally instead of chasing emergencies in production.",
-        "qa-ai": "Quality assurance professional with 18+ years of manual testing expertise across healthcare, government, e-commerce, and emerging AI systems. Career includes 5+ years of .NET and Java platform testing for VA healthcare applications and home loan processing systems, with hands-on API testing using SOAP and REST protocols via Postman. Daily JIRA and Confluence user with administration experience including workflow design, project configuration, and dashboard creation. Specialized in AI red teaming, LLM output validation, prompt engineering, and hallucination detection—bringing traditional QA discipline to emerging AI products. Proven track record of writing comprehensive test strategies and establishing QA processes from zero. Strong analytical thinker and trilingual communicator (English, Spanish, ASL) who bridges technical and business stakeholders to deliver quality outcomes.",
+        "qa-lead": "Senior QA and UAT lead with 18+ years making software work, and making it work for everyone. I build and lead quality and user-acceptance testing from the ground up, combining technical rigor (test strategy, API and platform testing, JIRA and TestRail, requirements-to-coverage traceability) with deep accessibility expertise (Section 508 and WCAG, hands-on JAWS and NVDA screen-reader validation) and AI-validation skills (LLM output validation, red-teaming, and hallucination detection). Equally central is the human side of quality: I advocate for the end user, communicate clearly with technical and business stakeholders, stay calm and supportive with people under pressure, and bring a trilingual perspective (English, Spanish, and ASL) shaped by years working alongside the Deaf and accessibility community. I test not only whether software functions, but whether it genuinely serves the people who depend on it.",
+        "qa-ai": "Senior QA lead with 18+ years testing across healthcare, government, e-commerce, and emerging AI systems. Bringing traditional QA rigor to AI products through LLM output validation, red-teaming, prompt engineering, and hallucination detection, on a foundation of hands-on .NET/Java platform testing, SOAP/REST API testing via Postman, and daily JIRA/Confluence use. Trilingual (English, Spanish, ASL) with 508/WCAG accessibility experience including JAWS and NVDA validation.",
         "business-analyst": "Business Analyst with 18+ years ensuring what gets built matches what the business needs. I specialize in establishing quality foundations from zero—introducing release discipline, documentation standards, and structured validation to teams shipping without process. Career spans healthcare, government, and technology systems, with deep expertise in requirements documentation, process analysis, UAT coordination, and stakeholder communication. Experienced in gap analysis, change management, and enabling teams to catch defects locally instead of chasing emergencies in production. Trilingual communicator (English, Spanish, ASL) skilled at bridging technical and non-technical stakeholders.",
         "instructor": "Training and enablement professional with 20+ years developing people and processes across technical environments. Experience spans formal classroom instruction in digital media and software applications, embedded training in QA and healthcare IT, Agile coaching for distributed teams, and building onboarding programs that reduced ramp-up time. Skilled at breaking down complex technical concepts for diverse audiences, from adult learners in workshop settings to cross-functional engineering teams. Trilingual communicator (English, Spanish, ASL) with a track record of mentoring individuals, standardizing processes, and creating documentation that scales beyond any single team member.",
         "cs": "Customer service professional with 20+ years delivering empathetic, high-touch support across gaming, healthcare, government, and live event environments. Career anchored by frontline support roles at Blizzard Entertainment and Linden Lab, where I de-escalated emotionally charged user conflicts, restored compromised accounts, and resolved complex issues through patient listening and clear communication. That service mindset carried into UAT leadership, stakeholder advocacy, and user research across VA healthcare, Deaf accessibility, and HIPAA-regulated platforms, championing end-user needs so shipped products genuinely serve the people they're built for. Trilingual communicator (English, Spanish, ASL) with proven ability to build rapport with diverse audiences in person, by phone, via live chat, and through ticket systems."
     },
     // Role-specific title/label variants for ATS optimization
     labelVariants: {
-        "default": "Quality & Business Analyst | Requirements & Process Specialist | UAT Leadership",
-        "qa-lead": "Senior QA Test Lead | UAT & Test Strategy | Healthcare & Government Systems",
-        "qa-ai": "Senior QA Test Lead | AI Testing & LLM Validation | API & Platform Testing",
+        "default": "Senior QA & UAT Lead | Accessibility (508/WCAG) & AI Output Validation | User-Centered, Trilingual Quality",
+        "qa-lead": "Senior QA & UAT Test Lead | Accessibility (508/WCAG) & User-Centered Testing | Healthcare & Government Systems",
+        "qa-ai": "Senior QA Lead | AI Validation & LLM Output QA | Accessibility (508/WCAG) & User-Centered Testing",
         "business-analyst": "Business Analyst | Requirements & Stakeholder Management | Healthcare & Government Systems",
         "instructor": "Training & Enablement Specialist | Knowledge Transfer | Technical Mentoring",
         "cs": "Customer Service Specialist | De-escalation & Account Recovery | Trilingual (English/Spanish/ASL)"
     },
     basics: {
         name: "John Escobedo",
-        label: "Quality & Business Analyst | Requirements & Process Specialist | UAT Leadership",
+        label: "Senior QA & UAT Lead | Accessibility (508/WCAG) & AI Output Validation | User-Centered, Trilingual Quality",
         picture: "",
         email: "john.esco.work@gmail.com",
         phone: "(512) 299-3269",
         website: "",
         summary:
-            "Quality and business analysis professional with 18+ years building the foundations that make software shippable. I specialize in establishing QA functions from zero—introducing version control discipline, release candidate processes, and documentation standards to teams shipping without structure. Background spans healthcare, gaming, e-commerce, and government systems, with deep expertise in requirements documentation, UAT leadership, and cross-functional collaboration. Trilingual communicator (English, Spanish, ASL) with a track record of influencing stakeholders, driving change, and enabling teams to catch defects locally instead of chasing emergencies in production.",
+            "Senior QA and UAT lead with 18+ years making software work, and making it work for everyone. I build and lead quality and user-acceptance testing from the ground up, combining technical rigor (test strategy, API and platform testing, JIRA and TestRail, requirements-to-coverage traceability) with deep accessibility expertise (Section 508 and WCAG, hands-on JAWS and NVDA screen-reader validation) and AI-validation skills (LLM output validation, red-teaming, and hallucination detection). Equally central is the human side of quality: I advocate for the end user, communicate clearly with technical and business stakeholders, stay calm and supportive with people under pressure, and bring a trilingual perspective (English, Spanish, and ASL) shaped by years working alongside the Deaf and accessibility community. I test not only whether software functions, but whether it genuinely serves the people who depend on it.",
         location: {
             city: "Austin",
             region: "Texas"
@@ -45,13 +45,11 @@ var resumeJSON = {
             website: "https://sharpee.net/",
             startDate: "2026-03-01",
             summary:
-                "Performing end-to-end exploratory and feature-level testing of new web-based software, contributing test infrastructure and documentation improvements directly to the codebase, and producing standardized failure reports that accelerate developer triage.",
+                "Performed exploratory testing on a new web application, found silent-failure bugs that scripted tests missed, and contributed fixes and documentation directly to the codebase.",
             highlights: [
-                "Conducting end-to-end, feature-oriented exploratory testing across browsers and platforms, validating complete user workflows rather than isolated component behavior.",
-                "Identifying critical silent-failure defects, including a case where the application returned blank responses with no error signaling, a class of bug that scripted suites pass without detection and requires exploratory observation to surface.",
-                "Authoring a custom output template for the project's bespoke in-house test system, standardizing failure reports so any reader, regardless of QA background, can immediately see what failed and why.",
-                "Leading maintenance of a 17-step user tutorial, cascading consistent updates across all steps whenever foundational changes occur to keep documentation aligned with current product behavior.",
-                "Working directly in the project codebase via a Git pull-request workflow, reading source to inform test scenarios and submitting improvements back rather than only filing tickets."
+                "Ran end-to-end exploratory testing across browsers and platforms, validating full user workflows.",
+                "Caught silent-failure bugs that scripted tests missed, including cases where the app returned blank responses with no error signal.",
+                "Built a custom failure-report template so any reader, technical or not, could immediately see what broke."
             ],
             tags: ["qa-lead", "qa-ai", "customer-service"]
         },
@@ -62,12 +60,12 @@ var resumeJSON = {
             website: "https://www.karaokedirectory.com/",
             startDate: "2025-07-17",
             summary:
-                "Hosted live karaoke events, managing audience engagement, real-time decision-making, and technical operations to create memorable experiences for diverse audiences.",
+                "Hosted live karaoke events, running sound and software while managing the room and adapting the flow to the crowd.",
             highlights: [
-                "Coordinated event flow and timing while adapting to audience needs and requests in real-time.",
-                "Managed technical setup including sound systems, software, and troubleshooting to ensure seamless delivery.",
-                "Created inclusive, welcoming atmosphere that encouraged participation from guests of all skill levels.",
-                "Balanced competing priorities (song queue, timing, audience energy) to optimize overall experience."
+                "Ran event flow and timing, adjusting live to audience requests and room energy.",
+                "Juggled the song queue, timing, and room energy to keep the night moving.",
+                "Handled sound systems, karaoke software, and on-the-fly troubleshooting so events ran without interruption.",
+                "Kept the atmosphere welcoming so first-timers felt comfortable stepping up alongside regulars."
             ],
             tags: ["event-host", "customer-service"]
         },
@@ -79,13 +77,11 @@ var resumeJSON = {
             startDate: "2025-07-01",
             endDate: "2025-09-11",
             summary:
-                "Served as communication bridge between operations and engineering for Apptronik's humanoid robot development, translating observed behaviors into actionable documentation and establishing process standards in a fast-paced, ambiguous environment.",
+                "Tested and documented humanoid robot behavior for Apptronik, writing procedures and bug reports engineering could act on directly.",
             highlights: [
-                "Translated observed robot behaviors into clear, actionable bug reports that accelerated issue resolution for engineering teams.",
-                "Authored startup, shutdown, and emergency shutdown procedures for 2 robot models where none existed, reducing new tester ramp-up time by approximately 50% and establishing reference materials adopted as team standard.",
-                "Bridged operations and engineering communication, keeping both teams aligned on priorities and findings.",
-                "Reached full productivity in a novel role with minimal onboarding, independently navigating a complex robotics domain.",
-                "Reduced physical testing environment setup time by 75% by standardizing the preparation pattern, ensuring consistent and repeatable conditions for data collection."
+                "Cut physical test setup time by 75% by standardizing the preparation pattern, giving data collection consistent, repeatable conditions.",
+                "Turned observed robot behaviors into clear bug reports engineering could act on immediately.",
+                "Wrote startup, shutdown, and emergency shutdown procedures for 2 robot models where none existed, cutting new-tester ramp-up time by roughly 50% and becoming the team standard."
             ],
             tags: ["qa-ai", "customer-service"]
         },
@@ -97,21 +93,16 @@ var resumeJSON = {
             startDate: "2019-03-01",
             endDate: "2025-06-30",
             summary:
-                "Senior contractor providing requirements analysis, UAT leadership, and quality assurance across multiple mission-critical VA healthcare projects. Subject matter expert for complex clinical modules, facilitating knowledge transfer and driving process standardization across distributed teams.",
+                "Led QA, UAT, and requirements analysis across multiple VA healthcare projects, drove Agile process adoption, and served as SME for complex clinical modules.",
             highlights: [
-                "Became the go-to SME for the Traumatic Brain Injury module, running knowledge transfer sessions that enabled cross-functional teams to navigate complex healthcare domain requirements.",
-                "Championed the transition from Waterfall to Agile, introducing release discipline and predictable delivery cycles to teams accustomed to ad-hoc shipping practices.",
-                "Advocated for and implemented code freeze and release candidate practices, shifting teams from reactive firefighting to proactive quality control.",
-                "Used JIRA and Confluence daily to manage test cases, track defects, document requirements, and coordinate with distributed teams across multiple VA projects.",
-                "Performed SOAP API testing for VA home loan processing systems, populating and validating service queries to ensure data integrity across .NET-based applications.",
-                "Conducted REST API testing using Postman to verify backend services and data contracts for Java-based healthcare modules.",
-                "Executed manual test strategies across .NET and Java platforms including functional, regression, integration, and end-to-end testing for clinical healthcare applications.",
-                "Developed and maintained comprehensive test strategies encompassing UAT, regression, smoke, sanity, and 508 compliance testing for VA healthcare systems.",
-                "Drove standardization of testing practices and documentation across multiple VA projects, building consensus among distributed teams and reducing onboarding time for new analysts.",
-                "Advocated for accessibility as a core quality metric, leading 508 compliance initiatives and educating team members on inclusive design requirements.",
-                "Performed hands-on screen reader validation with JAWS and NVDA on VA clinical interfaces, surfacing accessibility issues not catchable through visual inspection alone.",
-                "Collaborated with automation engineers to validate Cucumber/Selenium scripts, catching requirement-execution gaps before automated tests went into rotation.",
-                "Built requirements traceability documentation that mapped every business need to test coverage across web, mainframe, and mobile platforms."
+                "Became the go-to SME for the Traumatic Brain Injury module, running knowledge transfer sessions so cross-functional teams could navigate the clinical requirements.",
+                "Drove the Waterfall-to-Agile transition, introducing code freeze and release-candidate practices that shifted teams from reactive firefighting to predictable delivery.",
+                "Managed test cases, defects, requirements documentation, and project dashboards in JIRA and Confluence across 6+ years and multiple VA projects.",
+                "Ran SOAP API testing on VA home loan .NET applications and REST API testing via Postman on Java healthcare modules, validating service queries, data contracts, and data integrity.",
+                "Built and executed test strategies for VA clinical healthcare applications across .NET and Java, covering UAT, regression, integration, smoke, sanity, end-to-end, and 508 compliance.",
+                "Led 508 compliance initiatives and performed hands-on JAWS and NVDA screen-reader validation on VA clinical interfaces, catching accessibility issues visual inspection misses.",
+                "Partnered with automation engineers to validate Cucumber and Selenium scripts, catching requirement-to-execution gaps before tests went into rotation.",
+                "Built requirements traceability documentation mapping every business need to test coverage across web, mainframe, and mobile."
             ],
             tags: ["qa-lead", "qa-ai", "business-analyst", "instructor", "customer-service"]
         },
@@ -123,11 +114,11 @@ var resumeJSON = {
             startDate: "2011-01-01",
             endDate: "2012-04-30",
             summary:
-                "DJed at various dances and events around Austin, TX, coordinating with venues and adapting to diverse audience needs.",
+                "DJed dance events across Austin, working with venues and matching music to each event's tone and crowd.",
             highlights: [
-                "Created DJ setlists for Danceversity, Dance International, and Synergy Dance Studio based on event requirements and audience preferences.",
-                "Adapted to various in-house sound systems and venue constraints.",
-                "Coordinated with event organizers to align music selection with event tone and timing."
+                "Built setlists for Danceversity, Dance International, and Synergy Dance Studio based on event style and audience preferences.",
+                "Adapted to different in-house sound systems and venue quirks on the fly.",
+                "Coordinated with event organizers to match music to the tone and timing of each event."
             ],
             tags: ["event-host", "customer-service"]
         },
@@ -139,14 +130,12 @@ var resumeJSON = {
             startDate: "2018-06-05",
             endDate: "2018-10-01",
             summary:
-                "Partnered with engineering and product leadership to establish quality processes and design cross-team workflows for a health tech startup's secure patient portal during a period of rapid organizational change.",
+                "Established QA processes and JIRA workflows from the ground up for a health tech startup's secure patient portal, partnering with engineering and product leadership on release validation.",
             highlights: [
-                "Served as JIRA administrator, designing a unified JIRA workflow with custom issue types, screens, and transitions that facilitated smoother cross-team collaboration and visibility into release status.",
-                "Managed JIRA project configurations including permission schemes, notification settings, and dashboard creation to support QA and development workflows.",
-                "Assessed release risks and communicated go/no-go recommendations to product and engineering leadership, balancing speed-to-market with quality.",
-                "Defined initial QA process and release validation criteria for a team shipping without formal quality gates, establishing standards that brought predictability to a fast-moving startup environment.",
-                "Mentored team members on effective documentation practices and quality standards to foster a culture of quality across the organization.",
-                "Validated releases across all major browsers and mobile devices, catching requirement gaps before production deployment."
+                "As JIRA administrator, designed a unified workflow with custom issue types, permission schemes, notifications, and dashboards, giving engineering and product real-time visibility into release status.",
+                "Defined the initial QA process and release validation criteria for a team shipping without formal quality gates, bringing predictability to a fast-moving startup.",
+                "Assessed release risk and delivered go/no-go recommendations to product and engineering leadership, balancing speed to market with quality.",
+                "Validated releases across major browsers and mobile devices, catching requirement gaps before production."
             ],
             tags: ["qa-lead", "qa-ai", "business-analyst", "customer-service"]
         },
@@ -158,12 +147,11 @@ var resumeJSON = {
             startDate: "2017-07-17",
             endDate: "2018-06-01",
             summary:
-                "As the sole QA resource, built comprehensive quality processes and test infrastructure for the company's flagship education assessment platform, earning credibility with development and product teams.",
+                "As sole QA, built quality processes and test infrastructure from zero for the flagship education assessment platform, earning trust with development and product teams.",
             highlights: [
-                "Introduced foundational quality practices—version control discipline, release candidates, and structured validation—to a team shipping without formal QA process, establishing credibility that integrated quality as a respected part of the SDLC.",
-                "Created end-to-end test documentation spanning procedures, requirements traceability, and verification standards.",
-                "Improved developer-QA communication by introducing standardized user story and acceptance criteria templates, reducing ambiguity and accelerating delivery.",
-                "Created and maintained product documentation to support new feature releases and ensure consistent understanding of requirements.",
+                "Introduced foundational quality practices, including version control discipline, release candidates, and structured validation, to a team shipping without formal QA process, integrating quality as a respected part of the SDLC.",
+                "Created end-to-end test and product documentation covering procedures, requirements traceability, verification standards, and feature release notes.",
+                "Standardized user story and acceptance criteria templates, reducing ambiguity between developers and QA and speeding up delivery.",
                 "Owned end-to-end validation for the flagship web application, gating every release across browsers and mobile platforms."
             ],
             tags: ["qa-lead", "qa-ai", "business-analyst", "instructor", "customer-service"]
@@ -176,13 +164,12 @@ var resumeJSON = {
             startDate: "2015-05-15",
             endDate: "2017-05-19",
             summary:
-                "Contracted as QA Analyst for RetailMeNot, coordinating cross-team efforts for high-visibility e-commerce feature launches and aligning testing priorities with business objectives.",
+                "QA Analyst contracted to RetailMeNot, coordinating cross-team testing for high-visibility e-commerce launches and aligning test priorities with business needs.",
             highlights: [
-                "Coordinated QA efforts across multiple teams for the gift card feature launch supporting a $22M acquisition, aligning testing priorities with business objectives and leadership expectations.",
-                "Built custom JavaScript tools to validate site-wide analytics implementation and data integrity, ensuring business requirements were accurately captured.",
-                "Created standardized test documentation and data suites that eliminated inconsistencies across testing environments.",
-                "Responded to live production issues under pressure, triaging problems and communicating status updates to leadership during critical outages.",
-                "Partnered with developers to enhance internal tooling, ensure a CI/CD workflow, and contribute improvements that increased team efficiency."
+                "Coordinated QA across multiple teams for the gift card feature launch supporting a $22M acquisition, aligning test priorities with leadership expectations.",
+                "Built custom JavaScript tools to validate site-wide analytics implementation and data integrity across the product.",
+                "Triaged live production issues under pressure, communicating status updates to leadership during outages.",
+                "Partnered with developers to improve internal tooling and CI/CD workflow, contributing changes that increased team efficiency."
             ],
             tags: ["qa-lead", "qa-ai", "customer-service"]
         },
@@ -194,12 +181,12 @@ var resumeJSON = {
             startDate: "2013-05-06",
             endDate: "2015-01-16",
             summary:
-                "Developed inaugural QA process for an accessibility-focused video interpreting platform, immersing in user community to ensure product truly met the needs of Deaf and hard-of-hearing users.",
+                "Built the QA function for a video interpreting platform serving Deaf and hard-of-hearing users, immersing in the community to shape testing around real user needs.",
             highlights: [
-                "Invested in learning American Sign Language and Deaf cultural norms to understand user needs and ensure the product truly served its community—a user research approach that informed requirements validation.",
-                "Established the company's first-ever quality assurance function from zero, defining test procedures and quality benchmarks that enabled the team to identify non-functional code blocking product delivery.",
-                "Managed full validation lifecycle including creating test plans, executing test runs, and reporting results to stakeholders for both web and mobile platforms.",
-                "Solved cross-platform testing limitations by implementing a VirtualBox-based solution, expanding test coverage to previously unreachable environments."
+                "Learned American Sign Language and Deaf cultural norms to understand user needs firsthand, using that immersion as a user research approach that shaped requirements validation.",
+                "Established the company's first-ever QA function, defining test procedures and quality benchmarks that caught non-functional code blocking release.",
+                "Owned validation across web and mobile, from test planning through stakeholder reporting.",
+                "Expanded test coverage to previously unreachable environments by implementing a VirtualBox-based cross-platform solution."
             ],
             tags: ["qa-lead", "qa-ai", "business-analyst", "customer-service"]
         },
@@ -211,12 +198,11 @@ var resumeJSON = {
             startDate: "2012-07-16",
             endDate: "2013-04-18",
             summary:
-                "Founded and scaled the QA function for a HIPAA-compliant healthcare messaging app, ensuring regulatory requirements were met while building the team and processes where none existed.",
+                "Founded the QA function for a HIPAA-compliant healthcare messaging app, establishing regulatory-grade quality processes and validation strategy from zero.",
             highlights: [
-                "Analyzed and documented HIPAA compliance requirements, ensuring application met strict regulatory standards for secure transmission of patient health information.",
-                "Grew the QA department from a solo operation to a full team, hiring, onboarding, and mentoring new analysts while codifying repeatable quality processes.",
-                "Developed initial test strategy and comprehensive documentation to ensure software met business and regulatory requirements before release.",
-                "Executed functional, regression, and HIPAA compliance validation across all supported mobile devices, including devising creative testing methods (simulating network outages via elevator rides) to catch edge cases missed by standard approaches."
+                "Analyzed and documented HIPAA compliance requirements, ensuring the app met regulatory standards for secure transmission of patient health information.",
+                "Built the initial test strategy and QA documentation from scratch, gating releases against both business and HIPAA compliance requirements.",
+                "Ran functional, regression, and HIPAA compliance validation across all supported mobile devices, creatively simulating wifi outages to catch edge cases scripted testing misses."
             ],
             tags: ["qa-lead", "qa-ai", "instructor", "customer-service"]
         },
@@ -228,12 +214,11 @@ var resumeJSON = {
             startDate: "2011-08-01",
             endDate: "2012-04-16",
             summary:
-                "Contracted as QA Tester and promoted to Test Lead for Heatwave Interactive, authoring test documentation and leading a team across multiple game titles.",
+                "Contracted as QA Tester at Heatwave Interactive and promoted to Test Lead, authoring test documentation and leading a team across multiple game titles.",
             highlights: [
-                "Authored comprehensive test plans and documentation for smoke and regression testing cycles, improving coverage and consistency.",
+                "Authored test plans and documentation for smoke and regression cycles, improving coverage and consistency.",
                 "Led and mentored a team of testers, raising the bar on documentation quality and execution consistency.",
-                "Executed daily validation of game builds for core functionality, gameplay mechanics, and UI integrity.",
-                "Promoted to Test Lead based on documentation quality and team leadership skills."
+                "Ran daily validation of game builds for core functionality, gameplay mechanics, and UI integrity."
             ],
             tags: ["qa-lead", "qa-ai", "instructor"]
         },
@@ -245,11 +230,11 @@ var resumeJSON = {
             startDate: "2011-01-01",
             endDate: "2012-04-30",
             summary:
-                "Organized and coordinated weekly dance events, managing vendors, technical setup, and community engagement.",
+                "Organized and ran weekly dance events, handling vendors, tech setup, and community promotion.",
             highlights: [
-                "Organized and ran weekly events, coordinating DJs, venue logistics, and audience engagement.",
-                "Set up technical infrastructure to allow seamless integration with house audio systems.",
-                "Managed event promotion and community communication through social media."
+                "Ran weekly events, coordinating DJs, venue logistics, and crowd engagement.",
+                "Set up audio and event tech to integrate with the venue's house sound system.",
+                "Ran event promotion and community outreach through social media."
             ],
             tags: ["event-host", "customer-service"]
         },
@@ -261,13 +246,12 @@ var resumeJSON = {
             startDate: "2010-07-12",
             endDate: "2011-07-12",
             summary:
-                "Provided empathetic, high-touch customer experience support for World of Warcraft, analyzing complex issues and documenting findings for development teams while maintaining user trust in high-volume environment.",
+                "Delivered high-touch customer support for World of Warcraft, analyzing complex cases and documenting findings for development teams while maintaining user trust in a high-volume environment.",
             highlights: [
-                "Analyzed and documented cases of fraud and exploitation, providing detailed reports with root cause analysis for development teams.",
-                "Provided compassionate support during emotionally charged escalations, restoring lost items and accounts while maintaining user trust.",
-                "De-escalated frustrated users through patient listening and clear communication, turning negative experiences into moments of trust.",
-                "Delivered high-volume support via live chat and ticket systems, balancing efficiency with genuine care for each user's experience.",
-                "Restored compromised accounts with precision, adhering to strict security and data integrity protocols."
+                "Analyzed and documented fraud and exploitation cases, delivering detailed root cause reports to development teams.",
+                "De-escalated emotionally charged escalations through patient listening, restoring lost items and accounts and turning frustrated users into loyal ones.",
+                "Delivered high-volume support via live chat and ticket systems, balancing efficiency with genuine care.",
+                "Restored compromised accounts with precision, following strict security and data integrity protocols."
             ],
             tags: ["qa-lead", "qa-ai", "customer-service"]
         },
@@ -279,13 +263,12 @@ var resumeJSON = {
             startDate: "2007-03-26",
             endDate: "2010-06-09",
             summary:
-                "Progressed through three promotions from frontline support to QA Analyst, identifying operational inefficiencies and building solutions while establishing customer support processes.",
+                "Promoted three times from frontline support to QA Analyst, identifying operational gaps and building tools while establishing customer support processes.",
             highlights: [
-                "Identified operational inefficiencies and took initiative to build custom diagnostic tools, demonstrating gap analysis and solution design capabilities.",
-                "Played key role in establishing customer support processes and documentation using Parature ticket system and live chat.",
-                "Promoted to QA Analyst after demonstrating exceptional analytical and diagnostic skills; responsible for testing daily builds and documenting complex issues.",
-                "Served as frontline First Responder, managing in-world emergencies, enforcing Terms of Service, and resolving user conflicts.",
-                "Earned three promotions in three years through consistent performance, initiative, and demonstrated ability to take on increasing responsibility."
+                "Built custom diagnostic tools to address operational gaps identified in support workflows.",
+                "Established customer support processes and documentation using the Parature ticket system and live chat.",
+                "As QA Analyst, tested daily builds and documented complex issues for engineering handoff.",
+                "Served as frontline First Responder, handling in-world emergencies, enforcing Terms of Service, and resolving user conflicts."
             ],
             tags: ["qa-lead", "qa-ai", "customer-service"]
         },
@@ -297,12 +280,11 @@ var resumeJSON = {
             startDate: "2006-11-01",
             endDate: "2007-02-03",
             summary:
-                "Performed cross-platform compatibility testing for mobile games across 100+ device models, documenting platform-specific issues and developing strategies for fragmented environments.",
+                "Cross-platform compatibility testing for mobile games across 100+ device models, documenting platform-specific issues and building strategies for fragmented environments.",
             highlights: [
-                "Executed comprehensive functional and compatibility testing across 100+ unique device models, documenting platform-specific requirements and constraints.",
-                "Identified, documented, and tracked platform-specific bugs using Mantis, providing detailed analysis for developers.",
-                "Developed strategies for efficient testing across disparate hardware and software platforms.",
-                "Maintained quality oversight across the full product lifecycle, from initial builds through production and post-release patches."
+                "Ran functional and compatibility testing across 100+ unique device models, building strategies for efficient testing across fragmented hardware and software platforms.",
+                "Tracked platform-specific bugs in Mantis with detailed analysis for developers.",
+                "Maintained quality oversight from initial builds through production patches."
             ],
             tags: ["qa-lead", "qa-ai"]
         },
@@ -314,13 +296,12 @@ var resumeJSON = {
             startDate: "2006-02-01",
             endDate: "2006-11-01",
             summary:
-                "Executed quality assurance for high-profile game ports, authoring test documentation and collaborating with development to isolate platform-specific issues.",
+                "Handled QA for high-profile Mac game ports, authoring test documentation and partnering with development to isolate platform-specific issues.",
             highlights: [
-                "Authored and maintained detailed test plans and documentation to guide testing team and establish organized protocols.",
-                "Collaborated closely with development team to isolate and document issues specific to Mac platform, contributing to stable launches.",
-                "Utilized JIRA and DevTrack to document, track, and verify defects with clear, actionable reports.",
-                "Caught localization and UI text errors through exhaustive proofreading, improving the polish of shipped titles.",
-                "Validated major titles including Call of Duty 2 and Civilization IV through functional, compatibility, and regression testing, contributing to stable Mac launches."
+                "Authored test protocols and documentation to guide the testing team and establish organized standards.",
+                "Validated major titles including Call of Duty 2 and Civilization IV through functional, compatibility, and regression testing, partnering with developers to isolate Mac-specific issues for stable launches.",
+                "Documented, tracked, and verified defects in JIRA and DevTrack with clear, actionable reports.",
+                "Caught localization and UI text errors through exhaustive proofreading, improving the polish of shipped titles."
             ],
             tags: ["qa-lead", "qa-ai"]
         },
@@ -331,11 +312,10 @@ var resumeJSON = {
             startDate: "2005-10-01",
             endDate: "2006-01-31",
             summary:
-                "Provided bilingual administrative support for an architectural firm, coordinating schedules and serving as primary communication point for diverse client base.",
+                "Bilingual administrative support for an architectural firm, coordinating executive schedules and serving as primary communication point for a diverse client base.",
             highlights: [
-                "Delivered professional customer service in English and Spanish, ensuring clear communication with diverse client base.",
-                "Managed and coordinated executive calendar, prioritizing scheduling conflicts.",
-                "Handled high-volume communications in both languages, directing inquiries and providing information."
+                "Delivered bilingual customer service in English and Spanish, handling high-volume communications and directing inquiries for a diverse client base.",
+                "Managed the executive calendar, prioritizing scheduling conflicts."
             ],
             tags: ["administrative", "customer-service"]
         },
@@ -345,11 +325,11 @@ var resumeJSON = {
             position: "Receptionist",
             startDate: "2005-04-28",
             endDate: "2005-09-30",
-            summary: "Served as front desk point of contact for dance studio, managing customer interactions and administrative processes.",
+            summary: "Front desk point of contact for a dance studio, handling customer interactions and administrative operations.",
             highlights: [
-                "Managed customer check-ins and new student reservations, ensuring smooth operations.",
-                "Fielded inquiries from prospective students, communicating program details and booking reservations.",
-                "Processed payments accurately, handling cash and card transactions."
+                "Handled customer check-ins and new student reservations, keeping the front desk running smoothly.",
+                "Fielded inquiries from prospective students, explaining program details and booking reservations.",
+                "Processed cash and card payments accurately."
             ],
             tags: ["administrative", "customer-service"]
         },
@@ -359,12 +339,12 @@ var resumeJSON = {
             position: "Animator",
             startDate: "2004-11-15",
             endDate: "2005-04-22",
-            summary: "Owned full animation production pipeline for educational children's content, managing projects from script through final delivery.",
+            summary: "Owned the full animation production pipeline for educational children's content, running projects from script through final delivery.",
             highlights: [
-                "Managed end-to-end animation projects: writing scripts, creating storyboards, building animatics, and delivering final animations.",
-                "Developed content designed to engage young audiences and reinforce learning objectives.",
+                "Ran end-to-end animation projects: writing scripts, building storyboards and animatics, and delivering final animations.",
+                "Designed content to engage young audiences and reinforce learning objectives.",
                 "Coordinated audio editing, syncing dialogue and sound to animated sequences.",
-                "Supported web presence through website maintenance and updates."
+                "Maintained the studio's web presence and updates."
             ],
             tags: ["design", "instructor"]
         },
@@ -374,11 +354,11 @@ var resumeJSON = {
             position: "Building Monitor",
             startDate: "2004-10-01",
             endDate: "2004-11-15",
-            summary: "Provided security and access control for live performances, ensuring safe environment for performers and audiences.",
+            summary: "Provided security and access control for live performances at UT Performing Arts Center.",
             highlights: [
                 "Monitored venue access points, balancing performer access with security requirements.",
-                "Maintained audience safety during performances, preventing disruptions.",
-                "Conducted building safety checks to identify and address potential issues."
+                "Maintained audience safety during performances.",
+                "Ran building safety checks to identify and address issues before they escalated."
             ],
             tags: ["security", "customer-service"]
         },
@@ -388,11 +368,11 @@ var resumeJSON = {
             position: "Designer",
             startDate: "2004-05-20",
             endDate: "2004-08-20",
-            summary: "Served as layout designer for Spanish-language daily newspaper, working under deadline pressure to prepare content for publication.",
+            summary: "Layout designer for a Spanish-language daily newspaper, working under daily deadline pressure to prepare content for publication.",
             highlights: [
-                "Designed and laid out newspaper pages in QuarkXPress and Adobe InDesign, supporting platform migration.",
+                "Designed and laid out newspaper pages in QuarkXPress and Adobe InDesign, supporting a platform migration between the two.",
                 "Edited headlines and adjusted layouts under daily deadline pressure.",
-                "Conducted all work and communication in Spanish within bilingual newsroom."
+                "Worked entirely in Spanish within a bilingual newsroom."
             ],
             tags: ["design"]
         },
@@ -402,11 +382,11 @@ var resumeJSON = {
             position: "Digital Artist / Webmaster",
             startDate: "2002-07-01",
             endDate: "2004-06-30",
-            summary: "Provided professional photo services and client consultation, translating customer needs into quality deliverables.",
+            summary: "Provided professional photo services and client consultation, turning customer requests into polished deliverables.",
             highlights: [
-                "Consulted with customers to understand requirements and translate requests into polished final products.",
+                "Consulted with customers to understand requirements and turn requests into polished final products.",
                 "Performed detailed photo editing and restoration in Adobe Photoshop.",
-                "Assisted artists with Giclée printing workflows, ensuring quality standards were met."
+                "Supported artists with Giclée printing workflows, meeting print quality standards."
             ],
             tags: ["design", "customer-service"]
         },
@@ -416,11 +396,11 @@ var resumeJSON = {
             position: "Minister / Web Master",
             startDate: "2002-07-01",
             endDate: "2003-07-31",
-            summary: "Served as ordained wedding officiant performing bilingual ceremonies, gathering requirements from couples to craft personalized experiences.",
+            summary: "Ordained wedding officiant performing bilingual ceremonies, gathering requirements from couples to craft personalized experiences.",
             highlights: [
-                "Communicated with couples to gather requirements and understand their vision for customized ceremonies.",
+                "Consulted with couples to understand their vision and craft customized ceremonies.",
                 "Officiated ceremonies for diverse couples, delivering personalized services in English and Spanish.",
-                "Tutored business owner on web design skills, enabling them to maintain their own website."
+                "Tutored the business owner on web design so they could maintain their own website."
             ],
             tags: ["administrative", "customer-service"]
         },
@@ -430,11 +410,10 @@ var resumeJSON = {
             position: "Temp Worker",
             startDate: "2002-10-01",
             endDate: "2003-12-31",
-            summary: "Worked as temp administrator across various clients, adapting quickly to different environments and requirements.",
+            summary: "Handled admin assignments across multiple client offices in document modernization and legal redlining.",
             highlights: [
                 "Assisted businesses with document modernization and updates.",
-                "Learned document redlining processes for legal review.",
-                "Adapted quickly to diverse client environments and requirements."
+                "Learned document redlining processes for legal review."
             ],
             tags: ["administrative"]
         },
@@ -444,11 +423,11 @@ var resumeJSON = {
             position: "Intern",
             startDate: "2002-01-22",
             endDate: "2002-04-15",
-            summary: "Interned at professional animation studio, gaining exposure to production processes while supporting operations.",
+            summary: "Interned at a professional animation studio, gaining production exposure while supporting operations.",
             highlights: [
                 "Supported studio operations through office assistance and workspace organization.",
-                "Gained hands-on experience with digital coloring workflows for animated productions.",
-                "Developed traditional animation skills using professional equipment."
+                "Got hands-on experience with digital coloring workflows for animated productions.",
+                "Developed traditional animation skills on professional equipment."
             ],
             tags: ["design"]
         },
@@ -458,11 +437,10 @@ var resumeJSON = {
             position: "Teaching Assistant",
             startDate: "2001-10-01",
             endDate: "2002-05-31",
-            summary: "Served as teaching assistant providing tutoring and technical support to students, adapting instruction to varied skill levels.",
+            summary: "TA in a college design lab, tutoring students on Adobe applications and keeping workstations running for daily classes.",
             highlights: [
-                "Tutored students in Adobe Photoshop, Illustrator, and other applications, adapting instruction to individual needs and skill levels.",
-                "Provided technical troubleshooting to keep lab workstations functional.",
-                "Balanced TA responsibilities while pursuing coursework in video editing."
+                "Tutored students in Adobe Photoshop, Illustrator, and other applications.",
+                "Troubleshot lab workstations to keep them functional for class."
             ],
             tags: ["instructor"]
         },
@@ -472,11 +450,11 @@ var resumeJSON = {
             position: "Graphic Designer",
             startDate: "2001-11-01",
             endDate: "2002-02-28",
-            summary: "Created graphics and visual assets for client deliverables, collaborating with team to ensure alignment with requirements.",
+            summary: "Created graphics and visual assets for client deliverables, collaborating with the team to meet content and client requirements.",
             highlights: [
                 "Designed graphics for client brochures and technical documentation.",
                 "Produced print-ready assets meeting project specifications.",
-                "Collaborated with team to ensure designs aligned with content and client requirements."
+                "Collaborated with the team to align designs with content and client requirements."
             ],
             tags: ["design"]
         },
@@ -486,11 +464,10 @@ var resumeJSON = {
             position: "Temporary Administrative Assistant",
             startDate: "2001-02-01",
             endDate: "2001-11-30",
-            summary: "Completed various temporary assignments, adapting quickly to diverse client environments and project requirements.",
+            summary: "Placed on multiple assignments across biotech (Chiron) and educational tech (Leap Frog).",
             highlights: [
-                "Assisted Chiron with decommissioning and archiving materials for research project.",
-                "Supported Leap Frog product development, working with prototypes and creating educational quiz content.",
-                "Adapted quickly to diverse work environments and client needs across multiple assignments."
+                "Assisted Chiron with decommissioning and archiving materials for a research project.",
+                "Supported Leap Frog product development, working with prototypes and creating educational quiz content."
             ],
             tags: ["administrative"]
         },
@@ -500,11 +477,11 @@ var resumeJSON = {
             position: "Contract Graphic Designer",
             startDate: "2000-07-01",
             endDate: "2000-10-31",
-            summary: "Created visual assets for eLearning platform, collaborating with course developers to communicate technical concepts.",
+            summary: "Created visual assets for an eLearning platform, collaborating with course developers to communicate technical concepts visually.",
             highlights: [
                 "Designed instructional graphics to support technical eLearning course content.",
-                "Collaborated with course developers to visually communicate complex concepts for online learners.",
-                "Optimized images for web delivery using appropriate standards."
+                "Partnered with course developers to visually communicate complex concepts for online learners.",
+                "Optimized images for web delivery."
             ],
             tags: ["design"]
         },
@@ -515,12 +492,11 @@ var resumeJSON = {
             startDate: "1999-09-01",
             endDate: "2000-06-30",
             summary:
-                "Served as Rich Media specialist researching emerging technologies and translating technical specifications into actionable insights for product teams.",
+                "Rich Media specialist researching emerging technologies and translating technical specifications into useful direction for engineering and product teams.",
             highlights: [
-                "Conducted technical research on emerging technologies, translating complex specifications into actionable insights for engineering and product teams.",
-                "Collaborated with engineering and product teams to expand platform capabilities based on research findings.",
-                "Evaluated browser ecosystems and compatibility requirements to inform cross-platform strategies.",
-                "Contributed to company positioning during pivotal era in digital advertising technology."
+                "Researched emerging web technologies and translated complex specifications into direction engineering and product could act on.",
+                "Partnered with engineering and product teams to expand platform capabilities based on research findings.",
+                "Evaluated browser ecosystems and compatibility requirements to shape cross-platform strategies."
             ],
             tags: ["design"]
         },
@@ -532,12 +508,11 @@ var resumeJSON = {
             startDate: "2001-03-01",
             endDate: "2002-02-28",
             summary:
-                "Developed and delivered curriculum for adult learners, adapting teaching methods to accommodate varied skill levels and learning styles.",
+                "Ran adult-ed workshops on Office, Photoshop, and web fundamentals for beginners entering the workforce.",
             highlights: [
-                "Designed and taught structured workshops on Microsoft Office Suite, Adobe Photoshop, and web fundamentals, adapting to learner needs.",
-                "Facilitated positive learning environment by adapting teaching methods to varied skill levels and learning styles.",
-                "Provided one-on-one tutoring and technical assistance, troubleshooting issues to ensure seamless learning experience.",
-                "Managed computer lab facility, ensuring equipment and software maintained for daily classes."
+                "Designed and taught structured workshops on Microsoft Office Suite, Adobe Photoshop, and web fundamentals.",
+                "Provided one-on-one tutoring and technical assistance to keep students moving.",
+                "Managed the computer lab, keeping equipment and software ready for daily classes."
             ],
             tags: ["instructor"]
         },
@@ -550,10 +525,10 @@ var resumeJSON = {
             summary:
                 "Developed and delivered training programs on data collection methodologies, evaluating trainee performance against quality standards.",
             highlights: [
-                "Developed and delivered comprehensive training programs on data collection techniques, observational best practices, and proprietary software.",
-                "Evaluated trainee performance through practical exercises and assessments to ensure adherence to quality guidelines.",
+                "Developed and delivered training on data collection techniques, observational best practices, and proprietary software.",
+                "Evaluated trainee performance through practical exercises and assessments to keep them aligned with quality guidelines.",
                 "Provided constructive feedback and one-on-one coaching to improve trainee accuracy and efficiency.",
-                "Served as key resource for clarifying protocols, contributing to data quality improvement."
+                "Served as go-to resource for protocol clarification, contributing to data quality improvement."
             ],
             tags: ["instructor"]
         },
@@ -565,12 +540,12 @@ var resumeJSON = {
             startDate: "1999-10-01",
             endDate: "2000-05-31",
             summary:
-                "Delivered expert-level instruction in digital media software, developing curriculum and mentoring students on professional best practices.",
+                "Taught advanced Adobe After Effects and Dreamweaver at a professional video coalition, mentoring students on portfolio-quality work.",
             highlights: [
-                "Developed and taught comprehensive curricula for Adobe After Effects and Dreamweaver, adapting to learner needs and skill levels.",
-                "Led multi-session workshops combining lecture, demonstration, and hands-on practice to ensure mastery of complex concepts.",
-                "Mentored students on best practices for digital media production, enhancing portfolio quality.",
-                "Provided constructive feedback on projects, fostering collaborative learning environment."
+                "Developed and taught curricula for Adobe After Effects and Dreamweaver.",
+                "Led multi-session workshops combining lecture, demonstration, and hands-on practice.",
+                "Mentored students on digital media production best practices, strengthening portfolio quality.",
+                "Provided constructive feedback on projects, fostering a collaborative learning environment."
             ],
             tags: ["instructor"]
         },
@@ -581,10 +556,10 @@ var resumeJSON = {
             startDate: "1997-01-01",
             endDate: "1998-04-30",
             summary:
-                "Designed and instructed courses in web design and motion graphics, breaking down complex concepts for diverse adult learners.",
+                "Designed and taught web design and motion graphics courses, guiding adult learners from concept through execution on real projects.",
             highlights: [
-                "Developed curriculum and led classes for Adobe PageMill, HTML, Photoshop, and After Effects.",
-                "Broke down complex technical concepts into digestible lessons for varied learning styles and skill levels.",
+                "Developed curriculum and taught classes on Adobe PageMill, HTML, Photoshop, and After Effects.",
+                "Broke down complex technical concepts into digestible lessons for varied learning styles.",
                 "Guided students through hands-on projects from concept to execution, building practical skills.",
                 "Provided individualized support and constructive feedback to help students master techniques."
             ],
@@ -593,7 +568,7 @@ var resumeJSON = {
     ],
     education: [
         {
-            institution: "Austin Community College",
+            institution: "Austin Community College - Austin, TX",
             area: "American Sign Language",
             studyType: "Certificate",
             startDate: "2015",
@@ -602,7 +577,7 @@ var resumeJSON = {
             courses: ["DB1101 - ASL I", "DB1101 - ASL II", "DB1101 - ASL III", "DB1101 - ASL IV", "CS2011 - VGC"]
         },
         {
-            institution: "ASL School",
+            institution: "ASL School - Austin, TX",
             area: "American Sign Language",
             studyType: "Certificate",
             startDate: "2008",
