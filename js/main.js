@@ -26,86 +26,100 @@ function updatePlainTextLink() {
 }
 
 /**
+ * Escape a string for safe insertion as HTML text
+ */
+function escapeHTML(str) {
+    if (str == null) return '';
+    return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+}
+
+/**
  * Main render function - applies filters and renders all sections
  */
 function renderResume() {
-    // Get filtered data using shared utility
     const { filteredSkills, recentJobs, earlierJobs, skillsFormat } = applyFilters(resumeJSON);
 
-    // Set page title based on profile
     const label = getLabel(resumeJSON);
     document.title = `${resumeJSON.basics.name} - ${label}`;
 
-    // Set basic information - use profile-aware getters
     document.querySelector('.resume-name').textContent = resumeJSON.basics.name;
     document.querySelector('.resume-title').textContent = label;
     document.querySelector('.professional-summary').innerHTML =
-        `<strong>Summary: </strong>${getSummary(resumeJSON)}`;
+        `<strong>Summary: </strong>${escapeHTML(getSummary(resumeJSON))}`;
 
-    // Update contact info
+    // Contact info as real links so screen readers announce them as email/phone,
+    // and keyboard/AT users can activate them directly.
+    const email = resumeJSON.basics.email;
+    const phone = resumeJSON.basics.phone;
+    const telHref = phone ? phone.replace(/[^\d+]/g, '') : '';
+    const city = resumeJSON.basics.location.city;
+    const region = resumeJSON.basics.location.region;
     const contactHTML = `
-        ${resumeJSON.basics.email}<br>
-        ${resumeJSON.basics.phone}<br>
-        ${resumeJSON.basics.location.city}, ${resumeJSON.basics.location.region}
+        <a href="mailto:${escapeHTML(email)}" aria-label="Email John Escobedo at ${escapeHTML(email)}">${escapeHTML(email)}</a><br>
+        <a href="tel:${escapeHTML(telHref)}" aria-label="Call ${escapeHTML(phone)}">${escapeHTML(phone)}</a><br>
+        <span aria-label="Location: ${escapeHTML(city)}, ${escapeHTML(region)}">${escapeHTML(city)}, ${escapeHTML(region)}</span>
     `;
-    document.querySelector('.contact-info').innerHTML = contactHTML;
+    const contactEl = document.querySelector('.contact-info');
+    // <address> can only contain a <p> per our template; replace its inner content
+    const contactP = contactEl.querySelector('p') || contactEl;
+    contactP.innerHTML = contactHTML;
 
-    // Render skill sets (filtered) - format from URL param or profile
+    const skillsEl = document.getElementById('skillSets');
     if (skillsFormat === 'list') {
-        document.getElementById('skillSets').innerHTML = renderSkillsList(filteredSkills);
+        skillsEl.innerHTML = renderSkillsList(filteredSkills);
     } else {
-        document.getElementById('skillSets').innerHTML = renderSkills(filteredSkills);
+        skillsEl.innerHTML = renderSkills(filteredSkills);
     }
+    skillsEl.setAttribute('aria-busy', 'false');
 
-    // Render work experience (recent jobs with full detail)
-    document.getElementById('jobs').innerHTML = renderWorkExperience(recentJobs);
+    const jobsEl = document.getElementById('jobs');
+    jobsEl.innerHTML = renderWorkExperience(recentJobs);
+    jobsEl.setAttribute('aria-busy', 'false');
 
-    // Render earlier experience section (condensed) if there are earlier jobs
     const earlierSection = document.getElementById('earlier-experience-section');
     if (earlierSection) {
         if (earlierJobs.length > 0) {
             earlierSection.innerHTML = renderEarlierExperience(earlierJobs);
-            earlierSection.style.display = 'block';
+            earlierSection.hidden = false;
         } else {
             earlierSection.innerHTML = '';
-            earlierSection.style.display = 'none';
+            earlierSection.hidden = true;
         }
     }
 
-    // Render education
     document.getElementById('schools').innerHTML = renderEducation(resumeJSON.education);
 
-    // Update plaintext link to preserve query params
     updatePlainTextLink();
 }
 
 /**
  * Render skills section (pill/tag format - default)
- * @param {Array} skills - Filtered skills array
- * @returns {string} HTML string
+ * Uses a real <ul> so screen readers announce "list of N items"
  */
 function renderSkills(skills) {
     if (!skills || skills.length === 0) return '';
 
-    return skills.map(skill => {
-        // Per-skill keywordLimit override; 0 means show all
+    return skills.map((skill, i) => {
         const limit = skill.keywordLimit !== undefined ? skill.keywordLimit : 6;
         const limitedKeywords = limit > 0 ? skill.keywords.slice(0, limit) : skill.keywords;
+        const nameId = `skillset-${i}-name`;
         const tags = limitedKeywords.map(kw =>
-            `<span class="skill-tag">${kw}</span>`
+            `<li class="skill-tag">${escapeHTML(kw)}</li>`
         ).join('');
 
         const levelBadge = skill.level
-            ? `<span class="skill-level">${skill.level}</span>`
+            ? ` <span class="skill-level" aria-label="Proficiency: ${escapeHTML(skill.level)}">${escapeHTML(skill.level)}</span>`
             : '';
 
         return `
             <div class="skillset">
-                <p>
-                    <strong>${skill.name}</strong>
-                    ${levelBadge}
-                </p>
-                <div class="skill-tags">${tags}</div>
+                <p id="${nameId}"><strong>${escapeHTML(skill.name)}</strong>${levelBadge}</p>
+                <ul class="skill-tags" role="list" aria-labelledby="${nameId}">${tags}</ul>
             </div>
         `;
     }).join('');
@@ -120,18 +134,19 @@ function renderSkills(skills) {
 function renderSkillsList(skills) {
     if (!skills || skills.length === 0) return '';
 
-    return skills.map(skill => {
-        // Limit to ~4 keywords for ATS readability; per-skill keywordLimit overrides (0 = show all)
+    const items = skills.map(skill => {
         const limit = skill.keywordLimit !== undefined ? skill.keywordLimit : 4;
         const limitedKeywords = limit > 0 ? skill.keywords.slice(0, limit) : skill.keywords;
-        const keywordList = limitedKeywords.join(', ');
+        const keywordList = limitedKeywords.map(escapeHTML).join(', ');
 
         return `
-            <div class="skillset-list">
-                <strong>${skill.name}:</strong> ${keywordList}
-            </div>
+            <li class="skillset-list">
+                <strong>${escapeHTML(skill.name)}:</strong> ${keywordList}
+            </li>
         `;
     }).join('');
+
+    return `<ul class="skillset-list-group" role="list">${items}</ul>`;
 }
 
 /**
@@ -145,54 +160,81 @@ function renderEarlierExperience(jobs) {
     const jobLines = jobs.map((job, index) => {
         const startYear = job.startDate ? job.startDate.split('-')[0] : '';
         const endYear = job.endDate ? job.endDate.split('-')[0] : 'Present';
-        const dateRange = startYear ? `(${startYear}-${endYear})` : '';
+        const dateRange = startYear ? `(${escapeHTML(startYear)}–${escapeHTML(endYear)})` : '';
+        const dateSR = startYear ? `${startYear} to ${endYear}` : '';
 
-        // Build highlights HTML if available
+        const panelId = `earlier-panel-${index}`;
+        const buttonId = `earlier-button-${index}`;
+
         let highlightsHTML = '';
         if (job.highlights && job.highlights.length > 0) {
             const items = job.highlights.map(h => {
                 const cleaned = h.charAt(0) === ' ' ? h.substring(1) : h;
-                return `<li>${cleaned}</li>`;
+                return `<li>${escapeHTML(cleaned)}</li>`;
             }).join('');
             highlightsHTML = `<ul>${items}</ul>`;
         }
 
+        const accessibleName = `${job.position}, ${job.name}${dateSR ? ', ' + dateSR : ''}`;
+
         return `
-            <div class="earlier-job" onclick="toggleEarlierJob(this)">
-                <div class="earlier-job-header">
-                    <span class="earlier-position"><span class="earlier-expand-icon">+</span> ${job.position}</span>
-                    <span class="earlier-company">${job.name}</span>
-                    <span class="earlier-dates">${dateRange}</span>
-                </div>
-                <div class="earlier-job-details">
+            <li class="earlier-job">
+                <button type="button"
+                        class="earlier-job-toggle"
+                        id="${buttonId}"
+                        aria-expanded="false"
+                        aria-controls="${panelId}"
+                        aria-label="${escapeHTML(accessibleName)}. Show details.">
+                    <span class="earlier-job-header" aria-hidden="true">
+                        <span class="earlier-position"><span class="earlier-expand-icon">+</span>${escapeHTML(job.position)}</span>
+                        <span class="earlier-company">${escapeHTML(job.name)}</span>
+                        <span class="earlier-dates">${dateRange}</span>
+                    </span>
+                </button>
+                <div class="earlier-job-details"
+                     id="${panelId}"
+                     role="region"
+                     aria-labelledby="${buttonId}">
                     <div class="earlier-job-details-inner">
-                        ${job.summary ? `<p class="earlier-summary">${job.summary}</p>` : ''}
+                        ${job.summary ? `<p class="earlier-summary">${escapeHTML(job.summary)}</p>` : ''}
                         ${highlightsHTML ? `<div class="earlier-highlights">${highlightsHTML}</div>` : ''}
                     </div>
                 </div>
-            </div>
+            </li>
         `;
     }).join('');
 
     return `
-        <h2>Additional Experience</h2>
-        <div class="earlier-jobs-list">
+        <h2 id="earlier-heading">Additional Experience</h2>
+        <ul class="earlier-jobs-list" role="list">
             ${jobLines}
-        </div>
+        </ul>
     `;
 }
 
 /**
- * Toggle expanded state of an earlier job entry
- * @param {HTMLElement} element - The clicked earlier-job element
+ * Toggle expanded state — bound after render; button owns the state.
  */
-function toggleEarlierJob(element) {
-    element.classList.toggle('expanded');
-    const icon = element.querySelector('.earlier-expand-icon');
-    if (icon) {
-        icon.textContent = element.classList.contains('expanded') ? '−' : '+';
-    }
+function toggleEarlierJob(button) {
+    const expanded = button.getAttribute('aria-expanded') === 'true';
+    const next = !expanded;
+    button.setAttribute('aria-expanded', String(next));
+    const li = button.closest('.earlier-job');
+    if (li) li.classList.toggle('expanded', next);
+    const icon = button.querySelector('.earlier-expand-icon');
+    if (icon) icon.textContent = next ? '−' : '+';
+    // Update the accessible name so screen readers announce the next action.
+    const currentLabel = button.getAttribute('aria-label') || '';
+    const nextAction = next ? 'Hide details.' : 'Show details.';
+    const withoutAction = currentLabel.replace(/(Show|Hide) details\.$/, '').trim();
+    button.setAttribute('aria-label', `${withoutAction} ${nextAction}`);
 }
+
+// Event delegation - handles both click and keyboard (button gives us Enter/Space free)
+document.addEventListener('click', function(e) {
+    const btn = e.target.closest('.earlier-job-toggle');
+    if (btn) toggleEarlierJob(btn);
+});
 
 /**
  * Render work experience section
@@ -202,11 +244,12 @@ function toggleEarlierJob(element) {
 function renderWorkExperience(work) {
     if (!work || work.length === 0) return '';
 
-    return work.map(job => {
+    return work.map((job, i) => {
         const startDate = formatDate(job.startDate);
         const endDate = job.endDate ? formatDate(job.endDate) : 'Present';
+        const startISO = job.startDate || '';
+        const endISO = job.endDate || '';
 
-        // Group highlights - split into arrays where lines starting with space trigger new group
         const highlightGroups = [];
         let currentGroup = [];
 
@@ -222,31 +265,46 @@ function renderWorkExperience(work) {
 
                 currentGroup.push(cleanedHighlight);
 
-                // If this is the last item, add the final group
                 if (index === job.highlights.length - 1 && currentGroup.length > 0) {
                     highlightGroups.push([...currentGroup]);
                 }
             });
         }
 
-        // Render each group as its own <ul>
         const highlightsHTML = highlightGroups.map(group =>
-            `<ul>${group.map(item => `<li>${item}</li>`).join('')}</ul>`
+            `<ul>${group.map(item => `<li>${escapeHTML(item)}</li>`).join('')}</ul>`
         ).join('');
 
+        const headingId = `job-${i}-heading`;
+        const hasWebsite = job.website && job.website.trim() !== '';
+        const companyMarkup = hasWebsite
+            ? `<a href="${escapeHTML(job.website)}"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="${escapeHTML(job.name)} website, opens in a new tab">${escapeHTML(job.name)}<span class="visually-hidden"> (opens in a new tab)</span></a>`
+            : escapeHTML(job.name);
+
         return `
-            <article class="job">
+            <article class="job" aria-labelledby="${headingId}">
                 <div class="job-header">
                     <div>
-                        <h3 class="job-position">${job.position}</h3>
-                        <span class="job-company">
-                            <a href="${job.website}" target="_blank" rel="noopener">${job.name}</a> | ${job.location}
-                        </span>
-                        <span class="job-date">${startDate} to ${endDate}</span>
+                        <h3 class="job-position" id="${headingId}">${escapeHTML(job.position)}</h3>
+                        <p class="job-company">
+                            <span class="job-company-name">${companyMarkup}</span>
+                            <span class="job-company-sep" aria-hidden="true"> | </span>
+                            <span class="job-location">${escapeHTML(job.location)}</span>
+                        </p>
+                        <p class="job-date">
+                            <time datetime="${escapeHTML(startISO)}">${escapeHTML(startDate)}</time>
+                            <span> to </span>
+                            ${endISO
+                                ? `<time datetime="${escapeHTML(endISO)}">${escapeHTML(endDate)}</time>`
+                                : `<span>${escapeHTML(endDate)}</span>`}
+                        </p>
                     </div>
                 </div>
                 <div class="job-content">
-                    <p class="job-summary">${job.summary}</p>
+                    <p class="job-summary">${escapeHTML(job.summary)}</p>
                     <div class="job-highlights">
                         ${highlightsHTML}
                     </div>
@@ -267,15 +325,17 @@ function renderEducation(education) {
     return education.map(school => {
         const startDate = school.startDate || '';
         const endDate = school.endDate || '';
-        const dateRange = startDate || endDate ? `<span class="school-dates">${startDate} - ${endDate}</span>` : '';
+        const hasDates = !!(startDate || endDate);
+        const dateSR = hasDates ? `${startDate || 'unknown'} to ${endDate || 'unknown'}` : '';
+        const dateRange = hasDates
+            ? `<span class="school-dates" aria-label="Attended ${escapeHTML(dateSR)}">${escapeHTML(startDate)} – ${escapeHTML(endDate)}</span>`
+            : '';
 
         return `
             <div class="institution">
-                <dl>
-                    <dt class="school-title">${school.institution}</dt>
-                    <dd>${school.area}</dd>
-                    ${dateRange ? `<dd>${dateRange}</dd>` : ''}
-                </dl>
+                <p class="school-title">${escapeHTML(school.institution)}</p>
+                <p class="school-area">${escapeHTML(school.area)}</p>
+                ${dateRange ? `<p>${dateRange}</p>` : ''}
             </div>
         `;
     }).join('');

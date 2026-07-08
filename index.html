@@ -9,57 +9,54 @@
 </head>
 
 <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
     <div class="resume-container">
-        <!-- Header -->
-        <header class="resume-header">
+        <header class="resume-header" role="banner">
             <div class="header-info">
                 <h1 class="resume-name">John Escobedo</h1>
-                <p class="resume-title"></p>
+                <p class="resume-title" aria-label="Professional title"></p>
             </div>
-            <div class="contact-info">
-                <p>john.esco.work@gmail.com<br>(512) 299-3269<br>Manor, TX 78653</p>
-            </div>
+            <address class="contact-info" aria-label="Contact information">
+                <p>john.esco.work@gmail.com<br>(512) 299-3269<br>Austin, Texas</p>
+            </address>
         </header>
 
-        <!-- Professional Summary -->
-        <section class="summary-section">
-            <p class="professional-summary">This resume requires a JavaScript-enabled browser.</p>
-        </section>
+        <main id="main-content" tabindex="-1">
+            <section class="summary-section" aria-labelledby="summary-heading">
+                <h2 id="summary-heading" class="visually-hidden">Professional Summary</h2>
+                <p class="professional-summary">This resume requires a JavaScript-enabled browser.</p>
+            </section>
 
-        <!-- Skillsets -->
-        <section class="skills-section">
-            <h2>Skills</h2>
-            <div class="skills-grid" id="skillSets">
-                Loading skills...
-            </div>
-        </section>
+            <section class="skills-section" aria-labelledby="skills-heading">
+                <h2 id="skills-heading">Skills</h2>
+                <div class="skills-grid" id="skillSets" aria-busy="true">
+                    <p>Loading skills...</p>
+                </div>
+            </section>
 
-        <!-- Work Experience -->
-        <section class="work-section">
-            <h2>Professional Experience</h2>
-            <div class="jobs-list" id="jobs"></div>
-        </section>
+            <section class="work-section" aria-labelledby="work-heading">
+                <h2 id="work-heading">Professional Experience</h2>
+                <div class="jobs-list" id="jobs" aria-busy="true"></div>
+            </section>
 
-        <!-- Earlier Experience (populated by JS when profile is active) -->
-        <section class="earlier-section" id="earlier-experience-section" style="display: none;">
-        </section>
+            <section class="earlier-section" id="earlier-experience-section" aria-labelledby="earlier-heading" hidden>
+            </section>
 
-        <!-- Education -->
-        <section class="education-section">
-            <h2>Education</h2>
-            <div class="education-grid" id="schools"></div>
-        </section>
+            <section class="education-section" aria-labelledby="education-heading">
+                <h2 id="education-heading">Education</h2>
+                <div class="education-grid" id="schools"></div>
+            </section>
+        </main>
 
-        <!-- Downloads -->
-        <footer class="download-section">
-            <p>View as:</p>
-            <ul class="download-links">
+        <footer class="download-section" role="contentinfo" aria-labelledby="downloads-heading">
+            <h2 id="downloads-heading" class="download-heading">View as</h2>
+            <ul class="download-links" role="list">
                 <li><a id="plaintext-link" href="plaintextresume.html">Plain Text</a></li>
             </ul>
         </footer>
     </div>
 
-    <!-- JavaScript Files -->
     <script type="text/javascript" src="js/resumeJSON.js"></script>
     <script type="text/javascript" src="js/resume-config.js"></script>
     <script type="text/javascript" src="js/resume-utils.js"></script>
