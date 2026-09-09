@@ -1,11 +1,11 @@
 var resumeJSON = {
     // Role-specific summary variants for ATS optimization
     summaryVariants: {
-        "qa-lead": "Senior QA and UAT lead with 18+ years making software work, and making it work for everyone. I build and lead quality and user-acceptance testing from the ground up, combining technical rigor (test strategy, API and platform testing, JIRA and TestRail, requirements-to-coverage traceability) with deep accessibility expertise (Section 508 and WCAG, hands-on JAWS and NVDA screen-reader validation) and AI-validation skills (LLM output validation, red-teaming, and hallucination detection). Equally central is the human side of quality: I advocate for the end user, communicate clearly with technical and business stakeholders, stay calm and supportive with people under pressure, and bring a trilingual perspective (English, Spanish, and ASL) shaped by years working alongside the Deaf and accessibility community. I test not only whether software functions, but whether it genuinely serves the people who depend on it.",
-        "qa-ai": "Senior QA lead with 18+ years testing across healthcare, government, e-commerce, and emerging AI systems. Bringing traditional QA rigor to AI products through LLM output validation, red-teaming, prompt engineering, and hallucination detection, on a foundation of hands-on .NET/Java platform testing, SOAP/REST API testing via Postman, and daily JIRA/Confluence use. Trilingual (English, Spanish, ASL) with 508/WCAG accessibility experience including JAWS and NVDA validation.",
-        "business-analyst": "Business Analyst with 18+ years ensuring what gets built matches what the business needs. I specialize in establishing quality foundations from zero—introducing release discipline, documentation standards, and structured validation to teams shipping without process. Career spans healthcare, government, and technology systems, with deep expertise in requirements documentation, process analysis, UAT coordination, and stakeholder communication. Experienced in gap analysis, change management, and enabling teams to catch defects locally instead of chasing emergencies in production. Trilingual communicator (English, Spanish, ASL) skilled at bridging technical and non-technical stakeholders.",
-        "instructor": "Training and enablement professional with 20+ years developing people and processes across technical environments. Experience spans formal classroom instruction in digital media and software applications, embedded training in QA and healthcare IT, Agile coaching for distributed teams, and building onboarding programs that reduced ramp-up time. Skilled at breaking down complex technical concepts for diverse audiences, from adult learners in workshop settings to cross-functional engineering teams. Trilingual communicator (English, Spanish, ASL) with a track record of mentoring individuals, standardizing processes, and creating documentation that scales beyond any single team member.",
-        "cs": "Customer service professional with 20+ years delivering empathetic, high-touch support across gaming, healthcare, government, and live event environments. Career anchored by frontline support roles at Blizzard Entertainment and Linden Lab, where I de-escalated emotionally charged user conflicts, restored compromised accounts, and resolved complex issues through patient listening and clear communication. That service mindset carried into UAT leadership, stakeholder advocacy, and user research across VA healthcare, Deaf accessibility, and HIPAA-regulated platforms, championing end-user needs so shipped products genuinely serve the people they're built for. Trilingual communicator (English, Spanish, ASL) with proven ability to build rapport with diverse audiences in person, by phone, via live chat, and through ticket systems."
+        "qa-lead": "Senior QA and UAT lead with 18+ years making software work, and making it work for everyone. I build quality and user-acceptance programs from the ground up for healthcare, government, and e-commerce systems, bridge technical and business stakeholders, and stay calm and supportive with people under pressure. Trilingual (English, Spanish, ASL), with accessibility expertise shaped by years working alongside the Deaf community. I test not only whether software functions, but whether it genuinely serves the people who depend on it.",
+        "qa-ai": "Senior QA lead with 18+ years testing across healthcare, government, e-commerce, and emerging AI systems. I bring traditional QA rigor to AI products, holding model output to the same standard as any other release. Trilingual (English, Spanish, ASL), with accessibility expertise shaped by years working alongside the Deaf community.",
+        "business-analyst": "Business Analyst with 18+ years ensuring what gets built matches what the business needs. I specialize in establishing quality foundations from zero, bringing release discipline and structured validation to teams shipping without process so defects get caught locally instead of chased in production. Career spans healthcare, government, and technology systems. Trilingual communicator (English, Spanish, ASL) skilled at bridging technical and non-technical stakeholders.",
+        "instructor": "Training and enablement professional with 20+ years developing people and processes across technical environments, from teaching digital media in the classroom to embedding with QA and healthcare IT teams. Skilled at breaking down complex technical concepts for diverse audiences, from adult learners in workshop settings to cross-functional engineering teams. Trilingual communicator (English, Spanish, ASL) who builds programs and documentation that outlast any single team member.",
+        "cs": "Customer service professional with 20+ years supporting people across gaming, healthcare, government, and live events. Frontline roles at Blizzard Entertainment and Linden Lab taught me to stay calm with upset users and resolve complex problems through patient listening and clear communication, a mindset I carried into UAT leadership and user research on VA healthcare and Deaf accessibility platforms. Trilingual communicator (English, Spanish, ASL) who builds rapport with diverse audiences in person, by phone, and online."
     },
     // Role-specific title/label variants for ATS optimization
     labelVariants: {
@@ -24,7 +24,7 @@ var resumeJSON = {
         phone: "(512) 299-3269",
         website: "",
         summary:
-            "Senior QA and UAT lead with 18+ years making software work, and making it work for everyone. I build and lead quality and user-acceptance testing from the ground up, combining technical rigor (test strategy, API and platform testing, JIRA and TestRail, requirements-to-coverage traceability) with deep accessibility expertise (Section 508 and WCAG, hands-on JAWS and NVDA screen-reader validation) and AI-validation skills (LLM output validation, red-teaming, and hallucination detection). Equally central is the human side of quality: I advocate for the end user, communicate clearly with technical and business stakeholders, stay calm and supportive with people under pressure, and bring a trilingual perspective (English, Spanish, and ASL) shaped by years working alongside the Deaf and accessibility community. I test not only whether software functions, but whether it genuinely serves the people who depend on it.",
+            "Senior QA and UAT lead with 18+ years making software work, and making it work for everyone. I build quality and user-acceptance programs from the ground up for healthcare, government, and e-commerce systems, bridge technical and business stakeholders, and stay calm and supportive with people under pressure. Trilingual (English, Spanish, ASL), with accessibility expertise shaped by years working alongside the Deaf community. I test not only whether software functions, but whether it genuinely serves the people who depend on it.",
         location: {
             city: "Austin",
             region: "Texas"
@@ -613,274 +613,168 @@ var resumeJSON = {
             courses: []
         }
     ],
+    // Skills: each keyword lives in exactly one category, and every category shows
+    // all of its keywords (keywordLimit: 0). Skills render in a two-column grid, so
+    // keep the visible category count EVEN for every profile:
+    //   qa-lead 8, qa-ai 8, business-analyst 6, instructor 6, cs 4, all 12
     skills: [
         {
-            name: "Test Strategies",
-            tags: ["qa-ai"],
+            name: "Testing",
+            tags: ["qa-lead", "qa-ai", "business-analyst"],
             keywordLimit: 0,
             keywords: [
-                "UAT",
-                "Regression",
-                "Agile",
+                "Manual & Exploratory",
                 "Functional",
+                "Regression",
+                "UAT",
                 "Integration",
-                "Smoke",
-                "Sanity",
-                "Exploratory",
-                "Black Box",
-                "System",
-                "Usability",
-                "End-to-end",
-                "API",
-                "Acceptance",
-                "508 Compliance",
-                "HIPAA Compliance",
-                "Cross-browser",
-                "Cross-platform",
-                "Mobile",
-                "Desktop",
-                "Web Application",
-                "Release Validation",
-                "Data Integrity",
-                "Compatibility",
-                "Verification",
-                "Validation Testing"
+                "Smoke & Sanity",
+                "End-to-End",
+                "Usability"
             ]
         },
         {
-            name: "Manual Testing & QA Process",
-            tags: ["qa-ai"],
+            name: "Test Management",
+            tags: ["qa-lead", "qa-ai", "business-analyst"],
             keywordLimit: 0,
             keywords: [
-                "Manual Testing",
-                "Test Planning",
+                "Test Strategy & Planning",
                 "Test Case Design",
-                "Bug Reporting",
-                "Test Strategy Writing",
-                "QA Process Implementation"
+                "Requirements Traceability",
+                "Defect Triage & Root Cause Analysis",
+                "Release Go/No-Go & Risk Assessment",
+                "HIPAA Compliance"
             ]
         },
         {
-            name: "API Testing",
-            tags: ["qa-ai"],
+            name: "API & Platforms",
+            tags: ["qa-lead", "qa-ai"],
             keywordLimit: 0,
             keywords: [
-                "SOAP API Testing",
-                "REST API Testing",
-                "Postman",
-                "Chrome Developer Tools"
-            ]
-        },
-        {
-            name: "Platform Testing",
-            tags: ["qa-ai"],
-            keywordLimit: 0,
-            keywords: [
-                ".NET Platform Testing",
-                "Java Platform Testing",
+                "REST & SOAP API Testing (Postman)",
+                ".NET & Java Systems",
                 "Web Applications",
                 "Mobile (iOS/Android)",
-                "Desktop (PC/Mac/Linux)",
-                "Cross-browser/Cross-platform"
+                "Desktop (Windows/Mac/Linux)",
+                "Cross-Browser & Cross-Platform Compatibility"
             ]
         },
         {
-            name: "Business Analysis",
-            tags: ["qa-lead", "qa-ai", "business-analyst"],
+            name: "AI & LLM Validation",
+            tags: ["qa-ai"],
+            keywordLimit: 0,
             keywords: [
-                "Requirements Elicitation",
-                "User Stories & Acceptance Criteria",
-                "Process Mapping & Documentation",
-                "Gap Analysis",
-                "Stakeholder Management",
-                "Change Management",
-                "Requirements Traceability",
-                "Detailed Specification Writing"
-            ]
-        },
-        {
-            name: "Problem-Solving & Analysis",
-            tags: ["business-analyst", "customer-service"],
-            keywords: [
-                "Attention to Detail",
-                "Analytical Thinking",
-                "Problem-Solving",
-                "Critical Thinking",
-                "Root Cause Analysis",
-                "Troubleshooting",
-                "Complex Task Decomposition"
-            ]
-        },
-        {
-            name: "Leadership & Process",
-            tags: ["qa-lead", "qa-ai", "business-analyst", "instructor"],
-            keywords: [
-                "QA Process Implementation",
-                "Team Leadership",
-                "Process Standardization",
-                "SDLC",
-                "Agile/Scrum",
-                "Production Support",
-                "Remote Team Management"
-            ]
-        },
-        {
-            name: "Testing Methodologies & Frameworks",
-            tags: ["qa-lead", "qa-ai", "business-analyst"],
-            keywords: [
-                "Agile Testing",
-                "Regression Testing",
-                "User Acceptance Testing (UAT)",
-                "Test Planning",
-                "CI/CD Testing",
-                "Accessibility & 508 Testing",
-                "Output Verification & Validation"
-            ]
-        },
-        {
-            name: "AI & Prompt Engineering",
-            tags: ["qa-lead", "qa-ai"],
-            keywords: [
-                "Prompt Engineering & Optimization",
-                "AI Red Teaming & Adversarial Testing",
-                "LLM Output Validation & QA",
+                "LLM Output Validation",
                 "Hallucination Detection & Fact-Checking",
-                "LLM Prompt Pipeline Design",
+                "Red Teaming & Adversarial Testing",
+                "Prompt Engineering & Pipeline Design",
                 "AI Workflow Automation",
-                "AI Pair Programming (Claude Code, Copilot)",
-                "Rapid AI Tool Adoption"
-            ]
-        },
-        {
-            name: "Test Management & Documentation",
-            tags: ["qa-lead", "qa-ai"],
-            keywords: [
-                "JIRA/Xray",
-                "JIRA Administration",
-                "Confluence",
-                "TestRail",
-                "SOP Development",
-                "Risk Management"
+                "AI Pair Programming (Claude Code, Copilot)"
             ]
         },
         {
             name: "Training & Enablement",
             tags: ["instructor"],
+            keywordLimit: 0,
             keywords: [
                 "Curriculum Development",
-                "Adult Learning Facilitation",
+                "Classroom & Workshop Facilitation",
                 "Software Instruction",
                 "Onboarding & Knowledge Transfer",
-                "Documentation & SOP Creation",
+                "SOP & Documentation Writing",
                 "One-on-One Coaching"
             ]
         },
         {
-            name: "Interpersonal & Collaboration",
-            tags: ["business-analyst", "instructor", "customer-service"],
+            name: "Business Analysis",
+            tags: ["qa-lead", "qa-ai", "business-analyst", "instructor"],
+            keywordLimit: 0,
             keywords: [
-                "Clear Communication",
-                "Curiosity",
-                "Cross-functional Collaboration",
-                "Mentoring",
-                "Agile Coaching",
-                "Public Speaking & MC"
+                "Requirements Elicitation",
+                "User Stories & Acceptance Criteria",
+                "Gap Analysis",
+                "Process Mapping",
+                "Functional Specifications",
+                "Stakeholder Management",
+                "Change Management"
             ]
         },
         {
-            name: "Customer Service & Support",
+            name: "Customer Support",
             tags: ["customer-service"],
+            keywordLimit: 0,
             keywords: [
-                "High-Touch Customer Support",
+                "High-Touch & High-Volume Support",
                 "De-escalation & Conflict Resolution",
-                "Account Recovery & Restoration",
-                "Live Chat Support",
-                "Ticket System Support (Parature)",
-                "Empathetic Communication",
-                "Active Listening",
-                "End-User Advocacy",
-                "Stakeholder Communication",
-                "Production Incident Response",
-                "Cross-Team Coordination",
-                "Inclusive User Research",
-                "Audience & Venue Safety",
-                "Fraud & Exploit Documentation",
-                "Trust & Safety Operations",
-                "High-Volume Support",
-                "Customer Experience Documentation"
+                "Account Recovery",
+                "Live Chat & Ticket Systems (Parature)",
+                "Active Listening & Empathetic Communication",
+                "Trust & Safety (Fraud & Exploit Investigation)",
+                "Technical Troubleshooting & Incident Response"
             ]
         },
         {
-            name: "Accessibility & Inclusive Design",
+            name: "Accessibility & Inclusion",
             tags: ["qa-lead", "qa-ai", "business-analyst", "instructor", "customer-service"],
+            keywordLimit: 0,
             keywords: [
-                "508 Compliance Testing",
-                "WCAG Awareness",
-                "JAWS Screen Reader",
-                "NVDA Screen Reader",
-                "Inclusive Product Advocacy",
-                "American Sign Language (Conversational)",
-                "Deaf Cultural Competency"
+                "Section 508 & WCAG",
+                "JAWS & NVDA Screen Readers",
+                "Inclusive User Research",
+                "End-User Advocacy",
+                "Deaf Cultural Competency & ASL (Conversational)"
             ]
         },
         {
-            name: "Platforms & Environments",
-            tags: ["qa-lead", "qa-ai"],
+            name: "Leadership & Collaboration",
+            tags: ["qa-lead", "qa-ai", "business-analyst", "instructor"],
+            keywordLimit: 0,
             keywords: [
-                "Web Applications",
-                "Mobile (iOS/Android)",
-                "Desktop (PC, Mac, Linux)",
-                "Cross-browser/Cross-platform",
-                "REST API Testing",
-                "Gaming Platforms & Consoles"
+                "Team Leadership & Mentoring",
+                "Scrum Master & Agile Transformation",
+                "SDLC",
+                "Process Standardization",
+                "Cross-Functional Collaboration",
+                "Remote & Distributed Teams"
             ]
         },
         {
             name: "Tools & Technologies",
             tags: ["qa-lead", "qa-ai", "business-analyst", "instructor"],
+            keywordLimit: 0,
             keywords: [
-                "GitHub",
-                "Chrome Developer Tools",
-                "SQL / JQL",
+                "JIRA (Admin) & Confluence",
+                "Xray & TestRail",
+                "GitHub & CI/CD Workflows",
+                "Chrome DevTools",
+                "SQL & JQL",
                 "JavaScript/HTML/CSS",
-                "Command Line Interfaces",
-                "Postman"
+                "Command Line"
             ]
         },
         {
-            name: "Industry Expertise",
-            tags: ["qa-lead", "qa-ai", "business-analyst", "customer-service"],
+            name: "Office & Creative Software",
+            tags: ["qa-lead", "instructor", "customer-service"],
+            keywordLimit: 0,
             keywords: [
-                "Healthcare & Telehealth",
-                "Gaming & Entertainment",
-                "Educational Technology",
-                "Live Events & Hosting",
-                "Government & Veterans Affairs",
-                "Virtual Reality (VR)"
-            ]
-        },
-        {
-            name: "Office and Image Suites",
-            tags: ["qa-lead", "qa-ai", "business-analyst", "instructor", "customer-service"],
-            keywords: [
-                "Adobe Creative Suite",
-                "Office 365: Teams, Word, Excel, PowerPoint, Outlook",
-                "Google Workspace: Drive, Docs, Sheets",
+                "Office 365 (Teams, Word, Excel, PowerPoint, Outlook)",
+                "Google Workspace (Drive, Docs, Sheets)",
+                "Adobe Creative Suite (Photoshop, Illustrator, After Effects)",
                 "Canva",
-                "JIRA Confluence",
                 "GIMP"
             ]
         },
         {
-            name: "A/V Production & Coordination",
-            tags: ["event-host"],
+            name: "Live Events & A/V",
+            tags: ["event-host", "customer-service"],
+            keywordLimit: 0,
             keywords: [
                 "Live Sound Engineering & Mixing",
-                "A/V Equipment Operation & Troubleshooting",
-                "Client & Performer Coordination",
+                "A/V Setup & Strike",
                 "Music Programming & Live Cueing",
-                "Event Atmosphere Management",
-                "Technical Setup & Strike Efficiency"
+                "Performer & Client Coordination",
+                "Hosting & MC",
+                "Crowd Engagement"
             ]
         }
     ],

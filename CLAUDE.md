@@ -128,7 +128,9 @@ URL parameters:
 
 ### Adding a New Skill Category
 1. Edit `js/resumeJSON.js`
-2. Add object to `skills` array with `name` and `keywords` array
+2. Add object to `skills` array with `name`, `tags`, and `keywords` array
+3. Set `keywordLimit: 0` so every keyword renders (otherwise list format truncates to 4 and tags format to 6)
+4. Keep each keyword in exactly one category, and keep the visible category count even for every profile (skills render in a two-column grid)
 
 ### Adding a New Tag
 1. Add tag to job's `tags` array in `js/resumeJSON.js`
