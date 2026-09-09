@@ -2,7 +2,9 @@
  * generate-resumes.js — one command, per-profile ATS resume files.
  *
  * Renders index.html?profile=<key> for every profile defined in
- * resume-config.js and writes files/EscobedoJohn_<profile>.pdf and .docx.
+ * resume-config.js and writes files/autoresumes/EscobedoJohn_<profile>.pdf
+ * and .docx. Everything in files/autoresumes/ is machine-generated and safe to
+ * overwrite; manual exports live directly in files/.
  *
  * Reuses the existing puppeteer + html-to-docx dependencies. The profile list
  * is read live from RESUME_CONFIG in the page so this never drifts from config.
@@ -18,7 +20,7 @@ const path = require('path');
 
 const SCRIPT_DIR = __dirname;
 const INDEX = path.join(SCRIPT_DIR, 'index.html');
-const OUT_DIR = path.join(SCRIPT_DIR, 'files');
+const OUT_DIR = path.join(SCRIPT_DIR, 'files', 'autoresumes');
 const NAME = 'EscobedoJohn';
 
 // The look is owned entirely by the resume's @media print CSS -- this script just

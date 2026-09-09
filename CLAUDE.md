@@ -184,6 +184,14 @@ The `@media print` styles in `css/style.css` optimize PDF output for ATS parsing
 - **Black text** - All colors forced to black for reliable extraction
 - **Compact spacing** - Tighter margins for efficient page use
 
+## Generated Resume Files
+
+`npm run resumes` (alias for `node generate-resumes.js`) renders `index.html?profile=<key>` for every profile in `resume-config.js` through headless Chrome and writes `files/autoresumes/EscobedoJohn_<profile>.pdf` and `.docx`. Pass profile keys to limit the run, e.g. `node generate-resumes.js qa-lead`.
+
+- **PDF** - Same `@media print` CSS and `@page` margin as a manual Ctrl+P / Save as PDF (Letter, no header/footer, background graphics off)
+- **DOCX** - The rendered `.resume-container` markup converted with `html-to-docx`; print CSS does not apply to it
+- Everything in `files/autoresumes/` is machine-generated and overwritten on each run; files directly in `files/` are manual exports
+
 ## Writing Portfolio (Inform 7)
 
 The `writing/` subfolder contains an interactive fiction writing portfolio built with Inform 7.
