@@ -132,6 +132,32 @@ var resumeJSON = {
 
 All pages read from this single JSON file, so edits propagate automatically.
 
+After editing, run `npm run resumes` so the downloadable files match the site.
+
+---
+
+## Generated Downloads
+
+`index.html` shows **Download PDF / Download Word / Print** buttons under the header, so nobody has to know Ctrl+P. They link to the pre-generated file for whichever profile is on screen.
+
+```bash
+npm run resumes
+```
+
+This renders `index.html?profile=<key>` for every profile through headless Chrome and writes `files/autoresumes/EscobedoJohn_<profile>.pdf` and `.docx`. The PDF uses the same `@media print` CSS a manual Ctrl+P would, so it *is* the print view. Pass profile keys to limit the run: `node generate-resumes.js qa-lead`.
+
+Views built with `?years=`, `?additional=` or `?format=` have no matching generated file, so they hide the downloads and offer Print instead.
+
+### Keeping them current
+
+A stale file here reaches recruiters directly, so a pre-commit hook blocks commits that change the resume without regenerating. **Enable it once per clone:**
+
+```bash
+npm run hooks
+```
+
+The hook compares a sha256 of every render input against `files/autoresumes/generated.json`, which `npm run resumes` writes. Staging stale output does not get you past it. Bypass a false positive with `git commit --no-verify`.
+
 ---
 
 ## Additional Experience Section

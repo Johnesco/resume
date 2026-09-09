@@ -1,0 +1,12 @@
+#!/bin/sh
+# Refuse commits where files/autoresumes/ no longer matches the resume it was
+# generated from. See .githooks/check-generated-resumes.js for the actual check.
+#
+# Enabled by: npm run hooks   (sets core.hooksPath to .githooks)
+
+if ! command -v node >/dev/null 2>&1; then
+	echo "pre-commit: node not found, skipping the generated-resume check" >&2
+	exit 0
+fi
+
+exec node "$(git rev-parse --show-toplevel)/.githooks/check-generated-resumes.js"

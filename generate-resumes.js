@@ -17,11 +17,36 @@ const puppeteer = require('puppeteer');
 const HTMLtoDOCX = require('html-to-docx');
 const fs = require('fs');
 const path = require('path');
+const crypto = require('crypto');
 
 const SCRIPT_DIR = __dirname;
 const INDEX = path.join(SCRIPT_DIR, 'index.html');
 const OUT_DIR = path.join(SCRIPT_DIR, 'files', 'autoresumes');
 const NAME = 'EscobedoJohn';
+const STAMP = path.join(OUT_DIR, 'generated.json');
+
+// Every file whose content changes what the generated resumes look like. A full
+// run records their hashes in generated.json so the pre-commit hook can tell
+// whether files/autoresumes/ is still current -- the download buttons on
+// index.html serve those files, so stale output reaches recruiters directly.
+// Add to this list whenever the render path grows a new dependency.
+const INPUT_FILES = [
+  'index.html',
+  'css/style.css',
+  'js/resumeJSON.js',
+  'js/resume-config.js',
+  'js/resume-utils.js',
+  'js/main.js',
+  'generate-resumes.js',
+];
+
+// Normalize CRLF first: git stores these blobs with LF while the working copy may
+// hold CRLF, and a line ending never changes the rendered resume. The pre-commit
+// hook hashes the same way -- keep the two in step.
+function hashInput(relativePath) {
+  const content = fs.readFileSync(path.join(SCRIPT_DIR, relativePath), 'utf8');
+  return crypto.createHash('sha256').update(content.replace(/\r\n/g, '\n')).digest('hex');
+}
 
 // The look is owned entirely by the resume's @media print CSS -- this script just
 // reproduces a default browser "Save as PDF" (Letter paper, no header/footer,
@@ -100,8 +125,32 @@ async function main() {
       });
 
       // DOCX — extract the resume container (not <body>, which pulls in chrome).
+      // The @media print CSS does not apply here, so do its two jobs by hand on a
+      // clone: drop the on-screen-only chrome, and flatten the expandable Additional
+      // Experience entries to the condensed one-liners print shows. That second part
+      // matters -- html-to-docx discards <button> content, which silently emptied the
+      // whole Additional Experience section.
       const html = await page.evaluate(() => {
-        const el = document.querySelector('.resume-container') || document.body;
+        const source = document.querySelector('.resume-container') || document.body;
+        const el = source.cloneNode(true);
+
+        el.querySelectorAll('.resume-actions, .download-section, .skip-link')
+          .forEach(node => node.remove());
+
+        el.querySelectorAll('.earlier-job').forEach(job => {
+          const text = (selector) => {
+            const node = job.querySelector(selector);
+            // The position carries the +/- expand icon; it has no meaning on paper.
+            return node ? node.textContent.replace(/[+−]/g, '').replace(/\s+/g, ' ').trim() : '';
+          };
+          const position = text('.earlier-position');
+          const company = text('.earlier-company');
+          const dates = text('.earlier-dates');
+          job.textContent = [[position, company].filter(Boolean).join(', '), dates]
+            .filter(Boolean)
+            .join(' ');
+        });
+
         return el.innerHTML;
       });
       const fullHtml = `<!DOCTYPE html><html><head><meta charset="UTF-8"><style>${DOCX_STYLE}</style></head><body>${html}</body></html>`;
@@ -115,6 +164,18 @@ async function main() {
 
       const kb = (f) => (fs.statSync(f).size / 1024).toFixed(0);
       console.log(`  ✓ ${profile.padEnd(16)} PDF ${kb(pdfPath)}KB  DOCX ${kb(docxPath)}KB`);
+    }
+
+    // Only a full run can honestly claim the whole folder is current, so a
+    // filtered run leaves the old stamp in place and the hook keeps complaining.
+    if (only.length) {
+      console.log('\nPartial run: generated.json left untouched. Run with no arguments before committing.');
+    } else {
+      fs.writeFileSync(STAMP, JSON.stringify({
+        generated: new Date().toISOString(),
+        inputs: Object.fromEntries(INPUT_FILES.map(f => [f, hashInput(f)])),
+        outputs: profiles.flatMap(p => [`${NAME}_${p}.pdf`, `${NAME}_${p}.docx`]),
+      }, null, 2) + '\n');
     }
   } finally {
     await browser.close();

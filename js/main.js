@@ -25,6 +25,67 @@ function updatePlainTextLink() {
     link.href = 'plaintextresume.html' + currentSearch;
 }
 
+// Where generate-resumes.js writes its per-profile output.
+const GENERATED_DIR = 'files/autoresumes/';
+const GENERATED_PREFIX = 'EscobedoJohn';
+
+/**
+ * Build a self-describing download filename, e.g.
+ * "John Escobedo - Senior QA & UAT Test Lead.pdf". Labels are pipe-separated and
+ * contain slashes (508/WCAG), both illegal in filenames, so keep the part before
+ * the first pipe and drop anything Windows or macOS would reject.
+ * @param {string} extension - File extension without the dot
+ * @returns {string} Filename safe for the download attribute
+ */
+function downloadFileName(extension) {
+    const shortLabel = getLabel(resumeJSON).split('|')[0].trim();
+    const safe = `${resumeJSON.basics.name} - ${shortLabel}`
+        .replace(/[<>:"/\\|?*]/g, '')
+        .trim();
+    return `${safe}.${extension}`;
+}
+
+/**
+ * Point the download buttons at the pre-generated files matching this view.
+ *
+ * generate-resumes.js renders this page through headless Chrome under the same
+ * @media print CSS a Ctrl+P would use, so files/autoresumes/ already holds exactly
+ * what the print dialog produces. The button just hands one over, which is the
+ * whole point: recruiters do not have to find the print dialog.
+ *
+ * A view built with ?years=, ?additional= or ?format= has no matching generated
+ * file, so those cases fall back to the browser's own print dialog rather than
+ * offering a download that would not match what is on screen.
+ */
+function updateDownloadActions() {
+    const pdfLink = document.getElementById('download-pdf');
+    const docxLink = document.getElementById('download-docx');
+    const printButton = document.getElementById('print-page');
+    if (!pdfLink || !docxLink || !printButton) return;
+
+    const params = getQueryParams();
+    const profileName = params.profile ?? RESUME_CONFIG.defaultProfile;
+    const hasGeneratedFile = Boolean(RESUME_CONFIG.profiles?.[profileName]) &&
+        params.years == null && params.additional == null && params.format == null;
+
+    pdfLink.hidden = !hasGeneratedFile;
+    docxLink.hidden = !hasGeneratedFile;
+
+    if (hasGeneratedFile) {
+        const base = `${GENERATED_DIR}${GENERATED_PREFIX}_${encodeURIComponent(profileName)}`;
+        pdfLink.href = `${base}.pdf`;
+        pdfLink.setAttribute('download', downloadFileName('pdf'));
+        docxLink.href = `${base}.docx`;
+        docxLink.setAttribute('download', downloadFileName('docx'));
+    }
+
+    // With no matching file, the print dialog is the only route out, so lead with it.
+    printButton.classList.toggle('action-btn-quiet', hasGeneratedFile);
+    printButton.classList.toggle('action-btn-primary', !hasGeneratedFile);
+    printButton.textContent = hasGeneratedFile ? 'Print' : 'Print / Save as PDF';
+    printButton.addEventListener('click', () => window.print());
+}
+
 /**
  * Escape a string for safe insertion as HTML text
  */
@@ -95,6 +156,7 @@ function renderResume() {
     document.getElementById('schools').innerHTML = renderEducation(resumeJSON.education);
 
     updatePlainTextLink();
+    updateDownloadActions();
 }
 
 /**

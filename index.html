@@ -22,6 +22,17 @@
             </address>
         </header>
 
+        <!-- One-click downloads. hrefs point at RESUME_CONFIG.defaultProfile and are
+             rewritten per profile by main.js (updateDownloadActions). Hidden in print
+             and stripped from the DOCX by generate-resumes.js. -->
+        <div class="resume-actions" role="group" aria-label="Download this resume">
+            <a class="action-btn action-btn-primary" id="download-pdf"
+               href="files/autoresumes/EscobedoJohn_qa-lead.pdf" download>Download PDF</a>
+            <a class="action-btn" id="download-docx"
+               href="files/autoresumes/EscobedoJohn_qa-lead.docx" download>Download Word</a>
+            <button type="button" class="action-btn action-btn-quiet" id="print-page">Print</button>
+        </div>
+
         <main id="main-content" tabindex="-1">
             <section class="summary-section" aria-labelledby="summary-heading">
                 <h2 id="summary-heading" class="visually-hidden">Professional Summary</h2>

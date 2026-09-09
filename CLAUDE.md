@@ -58,6 +58,14 @@ Jobs in the "Additional Experience" section are displayed as condensed one-liner
 - Expand icon (`+`/`−`) indicates interactive state
 - Print view keeps jobs condensed (no expand functionality)
 
+### Download Buttons
+`index.html` shows a **Download PDF / Download Word / Print** bar under the header, wired by `updateDownloadActions()` in `js/main.js`. Recruiters should never need to find Ctrl+P.
+- The download links point at the pre-generated `files/autoresumes/EscobedoJohn_<profile>.pdf` / `.docx` for the profile currently on screen. Those files are made by `npm run resumes` from this same page under the same `@media print` CSS, so they are the print view
+- The `download` attribute renames the file for the recruiter, e.g. `John Escobedo - Senior QA & UAT Test Lead.pdf`, using the label text before the first `|`
+- A view built with `?years=`, `?additional=` or `?format=`, or an unknown `?profile=`, has no matching generated file. Those cases hide both download links and promote the Print button to "Print / Save as PDF"
+- The bar is hidden by `@media print` and removed from the DOCX by `generate-resumes.js`
+- **The buttons are only as current as the last `npm run resumes`.** Re-run it after editing `resumeJSON.js` or `resume-config.js`, or the buttons hand out a stale resume
+
 ### Dynamic Page Title
 The browser tab title (`<title>`) is set dynamically based on the active profile:
 - Format: `Name - Label` (e.g., "John Escobedo - QA Lead")
@@ -113,6 +121,7 @@ Dates use `YYYY-MM-DD` format. Omit `endDate` for current positions.
 2. Add job object to beginning of `work` array (newest first)
 3. Include appropriate `tags` for filtering
 4. Test with `?years=1` to see only recent jobs
+5. Run `npm run resumes` so the download buttons serve the new content
 
 ### Changing Default View Settings
 Edit `js/resume-config.js` to change what appears by default (no URL params):
@@ -189,8 +198,19 @@ The `@media print` styles in `css/style.css` optimize PDF output for ATS parsing
 `npm run resumes` (alias for `node generate-resumes.js`) renders `index.html?profile=<key>` for every profile in `resume-config.js` through headless Chrome and writes `files/autoresumes/EscobedoJohn_<profile>.pdf` and `.docx`. Pass profile keys to limit the run, e.g. `node generate-resumes.js qa-lead`.
 
 - **PDF** - Same `@media print` CSS and `@page` margin as a manual Ctrl+P / Save as PDF (Letter, no header/footer, background graphics off)
-- **DOCX** - The rendered `.resume-container` markup converted with `html-to-docx`; print CSS does not apply to it
+- **DOCX** - The rendered `.resume-container` markup converted with `html-to-docx`. Print CSS does not apply, so the script does that work on a clone instead: it strips the on-screen chrome (`.resume-actions`, `.download-section`, `.skip-link`) and flattens each Additional Experience entry to the condensed one-liner print shows. That flattening is required, not cosmetic, because `html-to-docx` discards `<button>` content and would otherwise leave the section empty
 - Everything in `files/autoresumes/` is machine-generated and overwritten on each run; files directly in `files/` are manual exports
+- These are the files the download buttons on `index.html` serve, so re-run after any resume data or config change
+- A full run also writes `files/autoresumes/generated.json`, a sha256 of every file in `INPUT_FILES` (the render path) plus the list of outputs. A filtered run leaves it alone, since only a full run can claim the folder is current
+
+### Pre-commit Hook
+`.githooks/pre-commit` blocks commits that change the resume without regenerating the downloads. Enabled per clone with `npm run hooks` (sets `core.hooksPath`), so a fresh clone has to run that once.
+- The check is content-based: `.githooks/check-generated-resumes.js` hashes the **staged** content of each input in `generated.json` and compares. Staging a stale `files/autoresumes/` does not get past it
+- Both sides normalize CRLF to LF before hashing. Git stores blobs with LF while the Windows working copy holds CRLF, and a line ending never changes the rendered resume. **If you change hashing on one side, change it on the other**
+- It stays quiet on commits that touch nothing in the render path, and warns without blocking if `generated.json` is missing entirely
+- `.gitattributes` pins `.githooks/**` to LF; CRLF makes `sh` reject the hook with "bad interpreter" on macOS and Linux
+- Adding a file that affects rendered output means adding it to `INPUT_FILES` in `generate-resumes.js`; the hook reads the list from the stamp, so it never drifts
+- Bypass with `git commit --no-verify`
 
 ## Writing Portfolio (Inform 7)
 
