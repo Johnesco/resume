@@ -59,10 +59,11 @@ Jobs in the "Additional Experience" section are displayed as condensed one-liner
 - Print view keeps jobs condensed (no expand functionality)
 
 ### Download Buttons
-`index.html` shows a **Download PDF / Download Word / Print** bar under the header, wired by `updateDownloadActions()` in `js/main.js`. Recruiters should never need to find Ctrl+P.
-- The download links point at the pre-generated `files/autoresumes/EscobedoJohn_<profile>.pdf` / `.docx` for the profile currently on screen. Those files are made by `npm run resumes` from this same page under the same `@media print` CSS, so they are the print view
+`index.html` shows a **Download PDF / Print** bar under the header, wired by `updateDownloadActions()` in `js/main.js`. Recruiters should never need to find Ctrl+P.
+- The download link points at the pre-generated `files/autoresumes/EscobedoJohn_<profile>.pdf` for the profile currently on screen. That file is made by `npm run resumes` from this same page under the same `@media print` CSS, so it is the print view
+- **No Word button.** The generator still writes a `.docx` per profile, but `html-to-docx` lays it out badly enough that it is not worth handing to a recruiter. Re-add the button once that output is presentable; the file naming and hook coverage already account for it
 - The `download` attribute renames the file for the recruiter, e.g. `John Escobedo - Senior QA & UAT Test Lead.pdf`, using the label text before the first `|`
-- A view built with `?years=`, `?additional=` or `?format=`, or an unknown `?profile=`, has no matching generated file. Those cases hide both download links and promote the Print button to "Print / Save as PDF"
+- A view built with `?years=`, `?additional=` or `?format=`, or an unknown `?profile=`, has no matching generated file. Those cases hide the download link and promote the Print button to "Print / Save as PDF"
 - The bar is hidden by `@media print` and removed from the DOCX by `generate-resumes.js`
 - **The buttons are only as current as the last `npm run resumes`.** Re-run it after editing `resumeJSON.js` or `resume-config.js`, or the buttons hand out a stale resume
 

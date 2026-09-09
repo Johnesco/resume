@@ -138,7 +138,7 @@ After editing, run `npm run resumes` so the downloadable files match the site.
 
 ## Generated Downloads
 
-`index.html` shows **Download PDF / Download Word / Print** buttons under the header, so nobody has to know Ctrl+P. They link to the pre-generated file for whichever profile is on screen.
+`index.html` shows **Download PDF** and **Print** buttons under the header, so nobody has to know Ctrl+P. The download links to the pre-generated PDF for whichever profile is on screen.
 
 ```bash
 npm run resumes
@@ -146,7 +146,9 @@ npm run resumes
 
 This renders `index.html?profile=<key>` for every profile through headless Chrome and writes `files/autoresumes/EscobedoJohn_<profile>.pdf` and `.docx`. The PDF uses the same `@media print` CSS a manual Ctrl+P would, so it *is* the print view. Pass profile keys to limit the run: `node generate-resumes.js qa-lead`.
 
-Views built with `?years=`, `?additional=` or `?format=` have no matching generated file, so they hide the downloads and offer Print instead.
+The `.docx` files are still generated but deliberately not offered on the page: `html-to-docx` lays them out badly enough that they are not worth sending to a recruiter. Grab one manually if you need it.
+
+Views built with `?years=`, `?additional=` or `?format=` have no matching generated file, so they hide the download and offer Print instead.
 
 ### Keeping them current
 

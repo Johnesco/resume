@@ -46,7 +46,7 @@ function downloadFileName(extension) {
 }
 
 /**
- * Point the download buttons at the pre-generated files matching this view.
+ * Point the download button at the pre-generated PDF matching this view.
  *
  * generate-resumes.js renders this page through headless Chrome under the same
  * @media print CSS a Ctrl+P would use, so files/autoresumes/ already holds exactly
@@ -56,12 +56,15 @@ function downloadFileName(extension) {
  * A view built with ?years=, ?additional= or ?format= has no matching generated
  * file, so those cases fall back to the browser's own print dialog rather than
  * offering a download that would not match what is on screen.
+ *
+ * The generator still writes a .docx per profile, but it is not offered here --
+ * html-to-docx lays the resume out badly enough that the file is not worth
+ * handing to a recruiter. Re-add the button once that output is presentable.
  */
 function updateDownloadActions() {
     const pdfLink = document.getElementById('download-pdf');
-    const docxLink = document.getElementById('download-docx');
     const printButton = document.getElementById('print-page');
-    if (!pdfLink || !docxLink || !printButton) return;
+    if (!pdfLink || !printButton) return;
 
     const params = getQueryParams();
     const profileName = params.profile ?? RESUME_CONFIG.defaultProfile;
@@ -69,14 +72,10 @@ function updateDownloadActions() {
         params.years == null && params.additional == null && params.format == null;
 
     pdfLink.hidden = !hasGeneratedFile;
-    docxLink.hidden = !hasGeneratedFile;
 
     if (hasGeneratedFile) {
-        const base = `${GENERATED_DIR}${GENERATED_PREFIX}_${encodeURIComponent(profileName)}`;
-        pdfLink.href = `${base}.pdf`;
+        pdfLink.href = `${GENERATED_DIR}${GENERATED_PREFIX}_${encodeURIComponent(profileName)}.pdf`;
         pdfLink.setAttribute('download', downloadFileName('pdf'));
-        docxLink.href = `${base}.docx`;
-        docxLink.setAttribute('download', downloadFileName('docx'));
     }
 
     // With no matching file, the print dialog is the only route out, so lead with it.

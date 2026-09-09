@@ -1,7 +1,7 @@
 /**
  * pre-commit check: is files/autoresumes/ still the resume it claims to be?
  *
- * The Download PDF / Download Word buttons on index.html serve those files, so a
+ * The Download PDF button on index.html serves those files, so a
  * commit that changes the resume without re-running `npm run resumes` quietly
  * hands recruiters an out-of-date resume. This blocks that.
  *
