@@ -61,10 +61,10 @@ Jobs in the "Additional Experience" section are displayed as condensed one-liner
 ### Download Buttons
 `index.html` shows a **Download PDF / Print** bar under the header, wired by `updateDownloadActions()` in `js/main.js`. Recruiters should never need to find Ctrl+P.
 - The download link points at the pre-generated `files/autoresumes/EscobedoJohn_<profile>.pdf` for the profile currently on screen. That file is made by `npm run resumes` from this same page under the same `@media print` CSS, so it is the print view
-- **No Word button.** The generator still writes a `.docx` per profile, but `html-to-docx` lays it out badly enough that it is not worth handing to a recruiter. Re-add the button once that output is presentable; the file naming and hook coverage already account for it
+- **PDF only, no Word.** `html-to-docx` laid the resume out too badly to send anyone, so DOCX generation was removed entirely rather than left to rot. `files/` still holds manual `.docx` exports. Restoring it means bringing back both the generator's DOCX branch and the DOM flattening it needed (see git history for `generate-resumes.js`)
 - The `download` attribute renames the file for the recruiter, e.g. `John Escobedo - Senior QA & UAT Test Lead.pdf`, using the label text before the first `|`
 - A view built with `?years=`, `?additional=` or `?format=`, or an unknown `?profile=`, has no matching generated file. Those cases hide the download link and promote the Print button to "Print / Save as PDF"
-- The bar is hidden by `@media print` and removed from the DOCX by `generate-resumes.js`
+- The bar is hidden by `@media print`, so it never reaches the generated PDF
 - **The buttons are only as current as the last `npm run resumes`.** Re-run it after editing `resumeJSON.js` or `resume-config.js`, or the buttons hand out a stale resume
 
 ### Dynamic Page Title
@@ -196,10 +196,9 @@ The `@media print` styles in `css/style.css` optimize PDF output for ATS parsing
 
 ## Generated Resume Files
 
-`npm run resumes` (alias for `node generate-resumes.js`) renders `index.html?profile=<key>` for every profile in `resume-config.js` through headless Chrome and writes `files/autoresumes/EscobedoJohn_<profile>.pdf` and `.docx`. Pass profile keys to limit the run, e.g. `node generate-resumes.js qa-lead`.
+`npm run resumes` (alias for `node generate-resumes.js`) renders `index.html?profile=<key>` for every profile in `resume-config.js` through headless Chrome and writes `files/autoresumes/EscobedoJohn_<profile>.pdf`. Pass profile keys to limit the run, e.g. `node generate-resumes.js qa-lead`.
 
 - **PDF** - Same `@media print` CSS and `@page` margin as a manual Ctrl+P / Save as PDF (Letter, no header/footer, background graphics off)
-- **DOCX** - The rendered `.resume-container` markup converted with `html-to-docx`. Print CSS does not apply, so the script does that work on a clone instead: it strips the on-screen chrome (`.resume-actions`, `.download-section`, `.skip-link`) and flattens each Additional Experience entry to the condensed one-liner print shows. That flattening is required, not cosmetic, because `html-to-docx` discards `<button>` content and would otherwise leave the section empty
 - Everything in `files/autoresumes/` is machine-generated and overwritten on each run; files directly in `files/` are manual exports
 - These are the files the download buttons on `index.html` serve, so re-run after any resume data or config change
 - A full run also writes `files/autoresumes/generated.json`, a sha256 of every file in `INPUT_FILES` (the render path) plus the list of outputs. A filtered run leaves it alone, since only a full run can claim the folder is current

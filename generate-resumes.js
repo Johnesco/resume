@@ -2,19 +2,21 @@
  * generate-resumes.js — one command, per-profile ATS resume files.
  *
  * Renders index.html?profile=<key> for every profile defined in
- * resume-config.js and writes files/autoresumes/EscobedoJohn_<profile>.pdf
- * and .docx. Everything in files/autoresumes/ is machine-generated and safe to
- * overwrite; manual exports live directly in files/.
+ * resume-config.js and writes files/autoresumes/EscobedoJohn_<profile>.pdf.
+ * Everything in files/autoresumes/ is machine-generated and safe to overwrite;
+ * manual exports live directly in files/.
  *
- * Reuses the existing puppeteer + html-to-docx dependencies. The profile list
- * is read live from RESUME_CONFIG in the page so this never drifts from config.
+ * PDF only. Word output was dropped because html-to-docx laid the resume out
+ * too badly to be worth sending; files/ still holds manual .docx exports.
+ *
+ * Reuses the existing puppeteer dependency. The profile list is read live from
+ * RESUME_CONFIG in the page so this never drifts from config.
  *
  * Usage:
  *   node generate-resumes.js                       # all profiles
  *   node generate-resumes.js qa-ai business-analyst # only these
  */
 const puppeteer = require('puppeteer');
-const HTMLtoDOCX = require('html-to-docx');
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
@@ -69,18 +71,6 @@ function fileUrl(p, query = '') {
   return `file:///${p.replace(/\\/g, '/')}${query}`;
 }
 
-// Basic Word-friendly styling for the DOCX (matches generate-docx.js).
-const DOCX_STYLE = `
-  body { font-family: Arial, sans-serif; font-size: 11pt; line-height: 1.4; }
-  h1 { font-size: 18pt; margin-bottom: 5pt; }
-  h2 { font-size: 14pt; margin-top: 12pt; margin-bottom: 6pt; border-bottom: 1px solid #333; }
-  h3 { font-size: 12pt; margin-top: 10pt; margin-bottom: 4pt; }
-  ul { margin: 6pt 0; padding-left: 20pt; }
-  li { margin-bottom: 3pt; }
-  p { margin: 6pt 0; }
-  .date { color: #666; }
-`;
-
 async function main() {
   if (!fs.existsSync(OUT_DIR)) fs.mkdirSync(OUT_DIR, { recursive: true });
 
@@ -124,46 +114,8 @@ async function main() {
         ...(pageMargin ? { margin: { top: pageMargin, right: pageMargin, bottom: pageMargin, left: pageMargin } } : {}),
       });
 
-      // DOCX — extract the resume container (not <body>, which pulls in chrome).
-      // The @media print CSS does not apply here, so do its two jobs by hand on a
-      // clone: drop the on-screen-only chrome, and flatten the expandable Additional
-      // Experience entries to the condensed one-liners print shows. That second part
-      // matters -- html-to-docx discards <button> content, which silently emptied the
-      // whole Additional Experience section.
-      const html = await page.evaluate(() => {
-        const source = document.querySelector('.resume-container') || document.body;
-        const el = source.cloneNode(true);
-
-        el.querySelectorAll('.resume-actions, .download-section, .skip-link')
-          .forEach(node => node.remove());
-
-        el.querySelectorAll('.earlier-job').forEach(job => {
-          const text = (selector) => {
-            const node = job.querySelector(selector);
-            // The position carries the +/- expand icon; it has no meaning on paper.
-            return node ? node.textContent.replace(/[+−]/g, '').replace(/\s+/g, ' ').trim() : '';
-          };
-          const position = text('.earlier-position');
-          const company = text('.earlier-company');
-          const dates = text('.earlier-dates');
-          job.textContent = [[position, company].filter(Boolean).join(', '), dates]
-            .filter(Boolean)
-            .join(' ');
-        });
-
-        return el.innerHTML;
-      });
-      const fullHtml = `<!DOCTYPE html><html><head><meta charset="UTF-8"><style>${DOCX_STYLE}</style></head><body>${html}</body></html>`;
-      const docxBuffer = await HTMLtoDOCX(fullHtml, null, {
-        table: { row: { cantSplit: true } },
-        footer: false,
-        pageNumber: false,
-      });
-      const docxPath = path.join(OUT_DIR, `${NAME}_${profile}.docx`);
-      fs.writeFileSync(docxPath, docxBuffer);
-
       const kb = (f) => (fs.statSync(f).size / 1024).toFixed(0);
-      console.log(`  ✓ ${profile.padEnd(16)} PDF ${kb(pdfPath)}KB  DOCX ${kb(docxPath)}KB`);
+      console.log(`  ✓ ${profile.padEnd(16)} PDF ${kb(pdfPath)}KB`);
     }
 
     // Only a full run can honestly claim the whole folder is current, so a
@@ -174,7 +126,7 @@ async function main() {
       fs.writeFileSync(STAMP, JSON.stringify({
         generated: new Date().toISOString(),
         inputs: Object.fromEntries(INPUT_FILES.map(f => [f, hashInput(f)])),
-        outputs: profiles.flatMap(p => [`${NAME}_${p}.pdf`, `${NAME}_${p}.docx`]),
+        outputs: profiles.map(p => `${NAME}_${p}.pdf`),
       }, null, 2) + '\n');
     }
   } finally {

@@ -57,9 +57,8 @@ function downloadFileName(extension) {
  * file, so those cases fall back to the browser's own print dialog rather than
  * offering a download that would not match what is on screen.
  *
- * The generator still writes a .docx per profile, but it is not offered here --
- * html-to-docx lays the resume out badly enough that the file is not worth
- * handing to a recruiter. Re-add the button once that output is presentable.
+ * PDF only. Word output was dropped from the generator because html-to-docx
+ * laid the resume out too badly to be worth sending.
  */
 function updateDownloadActions() {
     const pdfLink = document.getElementById('download-pdf');

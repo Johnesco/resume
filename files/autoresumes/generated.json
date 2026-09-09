@@ -1,26 +1,20 @@
 {
-  "generated": "2026-09-09T23:30:11.393Z",
+  "generated": "2026-09-09T23:39:21.507Z",
   "inputs": {
-    "index.html": "5b43d78bb30cba421c0b1baab34677f467cee22d67ca892af9a5b14b175a46d3",
-    "css/style.css": "bb5199e0776eeb4e005c358e416f3408a3f74cad3283d58a1a4eef79065017bd",
+    "index.html": "4ceca880f8fb3388141dae82ef7466639e41e1ad77879d54662569dced967a2a",
+    "css/style.css": "81ead8fb870269396a122d854b2109c16d0e5b414abff4ca169916af0c6c9d26",
     "js/resumeJSON.js": "9ae3f032d313b1163eb796e0fd1bd5e547407fb86ae51a1777e26a9e0cc84606",
     "js/resume-config.js": "6bb69eaccdee2cfcc29e9343ccd1e38c1fb1aef2d5938ad9dad27956170066ba",
     "js/resume-utils.js": "367b92d5b52b592472dff90b8d504ee09e5aed659c1d661de1533b75ad36bb94",
-    "js/main.js": "a554bffa4a4493d873b3ea28fa38ee239cb1d0714fa58f07a43605e1f75fdde2",
-    "generate-resumes.js": "db62e00b4d4bf79e74aa36e30335a4a7d755405b4c989f967f6ee450b6c8c8b6"
+    "js/main.js": "df764f6aa4c1f20b965cf5aa72aa131f28288b20d3cc0747b73a740febbbc379",
+    "generate-resumes.js": "4b4e1119b540934f45beb2ded560cc186d0a941879e411838f775db281e83bda"
   },
   "outputs": [
     "EscobedoJohn_all.pdf",
-    "EscobedoJohn_all.docx",
     "EscobedoJohn_qa-lead.pdf",
-    "EscobedoJohn_qa-lead.docx",
     "EscobedoJohn_qa-ai.pdf",
-    "EscobedoJohn_qa-ai.docx",
     "EscobedoJohn_business-analyst.pdf",
-    "EscobedoJohn_business-analyst.docx",
     "EscobedoJohn_instructor.pdf",
-    "EscobedoJohn_instructor.docx",
-    "EscobedoJohn_cs.pdf",
-    "EscobedoJohn_cs.docx"
+    "EscobedoJohn_cs.pdf"
   ]
 }
