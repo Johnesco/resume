@@ -13,7 +13,6 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
-    "html-to-docx": "^1.8.0",
-    "puppeteer": "^24.35.0"
+    "puppeteer": "^25.10.0"
   }
 }
