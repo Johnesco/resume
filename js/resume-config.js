@@ -87,6 +87,20 @@ const RESUME_CONFIG = {
             workHistoryYears: 16,
             additionalHistoryYears: 10,
             skillsFormat: "list"
+        },
+        "accessibility": {
+            // Accessibility lane (2026-09): the full QA history plus the "accessibility"
+            // tag that marks the Section 508 / JAWS / NVDA / Deaf-community work (GeekSI, CSD).
+            tags: ["accessibility", "qa-lead"],
+            summaryKey: "accessibility",
+            labelKey: "accessibility",
+            // 14 years full detail keeps CSD (2013-2015) in Professional Experience
+            // + 6 more condensed = 20 total
+            workHistoryYears: 14,
+            additionalHistoryYears: 6,
+            skillsFormat: "list",
+            // Skill categories listed here render first, in this order; the rest follow in file order.
+            skillOrder: ["Accessibility & Inclusion", "Testing", "Test Management"]
         }
     }
 };

@@ -90,7 +90,7 @@ The `resumeJSON` object follows a modified JSON Resume schema:
 ### Profile Tags
 Each profile in `resume-config.js` has a `tags` array listing which tags it includes. Jobs and skills appear in a profile if any of their tags overlap with the profile's tags array. The `"all"` profile shows everything regardless of tags.
 
-Tag vocabulary: `qa-lead`, `qa-ai`, `business-analyst`, `instructor`, `event-host`, `customer-service`, `design`, `security`, `administrative`
+Tag vocabulary: `qa-lead`, `qa-ai`, `business-analyst`, `instructor`, `event-host`, `customer-service`, `design`, `security`, `administrative`, `accessibility` (marks the Section 508 / Deaf-community roles; the `accessibility` profile pairs it with `qa-lead` and uses `skillOrder` to put Accessibility & Inclusion first)
 
 ### Job Tags
 Each job in `work` array should have a `tags` array for filtering:

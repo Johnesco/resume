@@ -124,10 +124,27 @@ function filterSkillsByProfile(skills, profileName) {
     if (profileName.toLowerCase() === 'all') return skills;
     const profileTags = getProfileTags(profileName);
     if (profileTags.length === 0) return skills;
-    return skills.filter(skill => {
+    const filtered = skills.filter(skill => {
         if (!skill.tags || skill.tags.length === 0) return false;
         return skill.tags.some(tag => profileTags.includes(tag));
     });
+    return orderSkillsByProfile(filtered, profileName);
+}
+
+/**
+ * Order skill categories by the profile's optional skillOrder list.
+ * Categories named in skillOrder come first, in that order; the rest keep file order.
+ * @param {Array} skills - Skill categories (already filtered)
+ * @param {string} profileName - Profile name
+ * @returns {Array} Reordered copy
+ */
+function orderSkillsByProfile(skills, profileName) {
+    const order = RESUME_CONFIG.profiles?.[profileName]?.skillOrder;
+    if (!Array.isArray(order) || order.length === 0) return skills;
+    const rank = name => { const i = order.indexOf(name); return i < 0 ? order.length : i; };
+    return skills.map((skill, i) => ({ skill, i }))
+        .sort((a, b) => rank(a.skill.name) - rank(b.skill.name) || a.i - b.i)
+        .map(x => x.skill);
 }
 
 /**

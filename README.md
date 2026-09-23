@@ -7,7 +7,7 @@ A dynamic, customizable resume website powered by vanilla JavaScript and JSON da
 ## Features
 
 - **Dynamic Rendering** - Resume generated from structured JSON data
-- **Profile-Based Filtering** - Predefined profiles (qa-lead, business-analyst, instructor, all) filter jobs and skills by matching tags
+- **Profile-Based Filtering** - Predefined profiles (qa-lead, qa-ai, accessibility, business-analyst, instructor, cs, all) filter jobs and skills by matching tags
 - **Years Filter** - Limit to recent X years of experience (default driven by active profile)
 - **Additive History** - Show recent jobs with full detail, plus older jobs in a condensed section
 - **Expandable Earlier Jobs** - Condensed jobs in "Additional Experience" can be clicked to reveal full details
@@ -40,7 +40,7 @@ Customize the resume by adding query parameters:
 
 | Parameter | Example | Description |
 |-----------|---------|-------------|
-| `profile` | `?profile=qa-lead` | Select a predefined profile (qa-lead, business-analyst, instructor, all) |
+| `profile` | `?profile=qa-lead` | Select a predefined profile (qa-lead, qa-ai, accessibility, business-analyst, instructor, cs, all) |
 | `years` | `?years=10` | Override work history years (full-detail window) |
 | `additional` | `?additional=5` | Override additional condensed years beyond work history |
 
@@ -53,7 +53,7 @@ index.html?profile=all&years=10
 
 Tags are used both for profile-based filtering and for job categorization:
 
-**Profile tags** (match profile names): `qa-lead` `business-analyst` `instructor`
+**Profile tags** (match profile names): `qa-lead` `qa-ai` `accessibility` `business-analyst` `instructor` `customer-service` (cs)
 
 **Other tags**: `default` `event-host` `design` `security`
 

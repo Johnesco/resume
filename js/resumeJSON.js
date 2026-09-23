@@ -5,7 +5,8 @@ var resumeJSON = {
         "qa-ai": "Senior QA lead with 18+ years testing across healthcare, government, e-commerce, and emerging AI systems. I bring traditional QA rigor to AI products through LLM output validation, red-teaming, prompt engineering, and hallucination detection, holding model output to the same release standard as any other feature. Trilingual (English, Spanish, ASL), with accessibility expertise shaped by years working alongside the Deaf community.",
         "business-analyst": "Business Analyst with 18+ years ensuring what gets built matches what the business needs. I specialize in establishing quality foundations from zero, bringing release discipline and structured validation to teams shipping without process so defects get caught locally instead of chased in production. Career spans healthcare, government, and technology systems. Trilingual communicator (English, Spanish, ASL) skilled at bridging technical and non-technical stakeholders.",
         "instructor": "Training and enablement professional with 20+ years developing people and processes across technical environments, from teaching digital media in the classroom to embedding with QA and healthcare IT teams. Skilled at breaking down complex technical concepts for diverse audiences, from adult learners in workshop settings to cross-functional engineering teams. Trilingual communicator (English, Spanish, ASL) who builds programs and documentation that outlast any single team member.",
-        "cs": "Customer service professional with 20+ years supporting people across gaming, healthcare, government, and live events. Frontline roles at Blizzard Entertainment and Linden Lab taught me to stay calm with upset users and resolve complex problems through patient listening and clear communication, a mindset I carried into UAT leadership and user research on VA healthcare and Deaf accessibility platforms. Trilingual communicator (English, Spanish, ASL) who builds rapport with diverse audiences in person, by phone, and online."
+        "cs": "Customer service professional with 20+ years supporting people across gaming, healthcare, government, and live events. Frontline roles at Blizzard Entertainment and Linden Lab taught me to stay calm with upset users and resolve complex problems through patient listening and clear communication, a mindset I carried into UAT leadership and user research on VA healthcare and Deaf accessibility platforms. Trilingual communicator (English, Spanish, ASL) who builds rapport with diverse audiences in person, by phone, and online.",
+        "accessibility": "Quality assurance and accessibility analyst with 18+ years testing healthcare, government, and e-commerce systems, including six years on VA clinical applications where I led Section 508 compliance initiatives and performed hands-on JAWS and NVDA screen-reader validation. I built the QA function for a video interpreting platform serving Deaf and hard-of-hearing users, learning American Sign Language and Deaf cultural norms to shape testing around real user needs. Trilingual (English, Spanish, ASL) with an ASL certificate from Austin Community College. I test not only whether software functions, but whether it works for everyone who depends on it."
     },
     // Role-specific title/label variants for ATS optimization
     labelVariants: {
@@ -14,7 +15,8 @@ var resumeJSON = {
         "qa-ai": "Senior QA Lead | AI Validation & LLM Output QA | Accessibility (508/WCAG) & User-Centered Testing",
         "business-analyst": "Business Analyst | Requirements & Stakeholder Management | Healthcare & Government Systems",
         "instructor": "Training & Enablement Specialist | Knowledge Transfer | Technical Mentoring",
-        "cs": "Customer Service Specialist | De-escalation & Account Recovery | Trilingual (English/Spanish/ASL)"
+        "cs": "Customer Service Specialist | De-escalation & Account Recovery | Trilingual (English/Spanish/ASL)",
+        "accessibility": "QA & Accessibility Analyst | Section 508 & WCAG Testing (JAWS, NVDA) | Healthcare & Government Systems | Trilingual (English/Spanish/ASL)"
     },
     basics: {
         name: "John Escobedo",
@@ -100,11 +102,12 @@ var resumeJSON = {
                 "Managed test cases, defects, requirements documentation, and project dashboards in JIRA and Confluence across 6+ years and multiple VA projects.",
                 "Ran SOAP API testing on VA home loan .NET applications and REST API testing via Postman on Java healthcare modules, validating service queries, data contracts, and data integrity.",
                 "Built and executed test strategies for VA clinical healthcare applications across .NET and Java, covering UAT, regression, integration, smoke, sanity, end-to-end, and 508 compliance.",
+                "Conducted user acceptance testing during two separate periods, organizing the testers, creating the tests, and gathering the results.",
                 "Led 508 compliance initiatives and performed hands-on JAWS and NVDA screen-reader validation on VA clinical interfaces, catching accessibility issues visual inspection misses.",
                 "Partnered with automation engineers to validate Cucumber and Selenium scripts, catching requirement-to-execution gaps before tests went into rotation.",
                 "Built requirements traceability documentation mapping every business need to test coverage across web, mainframe, and mobile."
             ],
-            tags: ["qa-lead", "qa-ai", "business-analyst", "instructor", "customer-service"]
+            tags: ["accessibility", "qa-lead", "qa-ai", "business-analyst", "instructor", "customer-service"]
         },
         {
             name: "Freelance",
@@ -188,7 +191,7 @@ var resumeJSON = {
                 "Owned validation across web and mobile, from test planning through stakeholder reporting.",
                 "Expanded test coverage to previously unreachable environments by implementing a VirtualBox-based cross-platform solution."
             ],
-            tags: ["qa-lead", "qa-ai", "business-analyst", "customer-service"]
+            tags: ["accessibility", "qa-lead", "qa-ai", "business-analyst", "customer-service"]
         },
         {
             name: "DocbookMD",
@@ -715,7 +718,7 @@ var resumeJSON = {
         },
         {
             name: "Accessibility & Inclusion",
-            tags: ["qa-lead", "qa-ai", "business-analyst", "instructor", "customer-service"],
+            tags: ["accessibility", "qa-lead", "qa-ai", "business-analyst", "instructor", "customer-service"],
             keywordLimit: 0,
             keywords: [
                 "Section 508 & WCAG",

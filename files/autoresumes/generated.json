@@ -1,11 +1,11 @@
 {
-  "generated": "2026-09-10T00:00:29.326Z",
+  "generated": "2026-09-23T06:47:34.332Z",
   "inputs": {
     "index.html": "4ceca880f8fb3388141dae82ef7466639e41e1ad77879d54662569dced967a2a",
     "css/style.css": "81ead8fb870269396a122d854b2109c16d0e5b414abff4ca169916af0c6c9d26",
-    "js/resumeJSON.js": "9ae3f032d313b1163eb796e0fd1bd5e547407fb86ae51a1777e26a9e0cc84606",
-    "js/resume-config.js": "6bb69eaccdee2cfcc29e9343ccd1e38c1fb1aef2d5938ad9dad27956170066ba",
-    "js/resume-utils.js": "367b92d5b52b592472dff90b8d504ee09e5aed659c1d661de1533b75ad36bb94",
+    "js/resumeJSON.js": "596bb57de9dbf865b0f677b6ae7acf9c01a7500f619b44571dfa88b85f4e7d0d",
+    "js/resume-config.js": "6f28d4680f5bb63b148f99680da8af3c5151ca6a141f25d1986a014d9c8cd921",
+    "js/resume-utils.js": "a063da95820814d724c123f679854741881c26e1d5061c069749ec0af7089675",
     "js/main.js": "df764f6aa4c1f20b965cf5aa72aa131f28288b20d3cc0747b73a740febbbc379",
     "generate-resumes.js": "4b4e1119b540934f45beb2ded560cc186d0a941879e411838f775db281e83bda"
   },
@@ -15,6 +15,7 @@
     "EscobedoJohn_qa-ai.pdf",
     "EscobedoJohn_business-analyst.pdf",
     "EscobedoJohn_instructor.pdf",
-    "EscobedoJohn_cs.pdf"
+    "EscobedoJohn_cs.pdf",
+    "EscobedoJohn_accessibility.pdf"
   ]
 }
