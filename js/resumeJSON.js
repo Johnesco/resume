@@ -672,7 +672,8 @@ var resumeJSON = {
                 "Red Teaming & Adversarial Testing",
                 "Prompt Engineering & Pipeline Design",
                 "AI Workflow Automation",
-                "AI Pair Programming (Claude Code, Copilot)"
+                "AI Pair Programming (Claude Code)",
+                "AI Assistants (Claude, ChatGPT, Gemini, Local Models)"
             ]
         },
         {

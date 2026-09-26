@@ -1,9 +1,9 @@
 {
-  "generated": "2026-09-23T06:47:34.332Z",
+  "generated": "2026-09-26T00:02:19.356Z",
   "inputs": {
     "index.html": "4ceca880f8fb3388141dae82ef7466639e41e1ad77879d54662569dced967a2a",
     "css/style.css": "81ead8fb870269396a122d854b2109c16d0e5b414abff4ca169916af0c6c9d26",
-    "js/resumeJSON.js": "596bb57de9dbf865b0f677b6ae7acf9c01a7500f619b44571dfa88b85f4e7d0d",
+    "js/resumeJSON.js": "206e5c410103942fc8527a1d6b2c5d3fe41b8b5f4b4b76736023ab231707b071",
     "js/resume-config.js": "6f28d4680f5bb63b148f99680da8af3c5151ca6a141f25d1986a014d9c8cd921",
     "js/resume-utils.js": "a063da95820814d724c123f679854741881c26e1d5061c069749ec0af7089675",
     "js/main.js": "df764f6aa4c1f20b965cf5aa72aa131f28288b20d3cc0747b73a740febbbc379",
