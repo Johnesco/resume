@@ -209,7 +209,7 @@
             html += 'EDUCATION\n\n';
             resumeJSON.education.forEach(school => {
                 html += `${school.institution}\n`;
-                html += `${school.area}\n`;
+                html += `${formatStudy(school)}\n`;
                 html += `${school.startDate} - ${school.endDate}\n\n`;
             });
 

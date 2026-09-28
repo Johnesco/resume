@@ -394,7 +394,7 @@ function renderEducation(education) {
         return `
             <div class="institution">
                 <p class="school-title">${escapeHTML(school.institution)}</p>
-                <p class="school-area">${escapeHTML(school.area)}</p>
+                <p class="school-area">${escapeHTML(formatStudy(school))}</p>
                 ${dateRange ? `<p>${dateRange}</p>` : ''}
             </div>
         `;

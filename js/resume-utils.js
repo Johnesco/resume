@@ -208,6 +208,18 @@ function oxfordComma(array) {
 }
 
 /**
+ * Format a school's study line, naming the credential when there is one
+ * (e.g. "Certificate in American Sign Language"). Coursework-only
+ * entries (studyType "CE") show just the area of study.
+ * @param {Object} school - Education entry from resumeJSON
+ * @returns {string} Study line
+ */
+function formatStudy(school) {
+    const type = school.studyType || '';
+    return /certificate|degree|diploma/i.test(type) ? `${type} in ${school.area}` : school.area;
+}
+
+/**
  * Format a date string (YYYY-MM-DD) to human readable format
  * @param {string|null} inputDate - Date string in YYYY-MM-DD format
  * @param {string} format - 'long' for full month name, 'short' for abbreviated
