@@ -184,6 +184,7 @@ geeksiresume.html
 3. Check `plaintextresume.html` renders correctly
 4. Verify `customize.html` shows all tags and skills
 5. Use Print Preview (Ctrl+P) to verify ATS-friendly PDF output
+6. After `npm run resumes`, check where pages break: `pdftotext -layout files/autoresumes/EscobedoJohn_<profile>.pdf -` and read the last and first lines around each form feed. Nothing should end a page on a job title or start one on a lone date line
 
 ## Print/PDF Output (ATS-Optimized)
 
@@ -193,6 +194,9 @@ The `@media print` styles in `css/style.css` optimize PDF output for ATS parsing
 - **Skills as text** - Converts skill pills to comma-separated inline text
 - **Black text** - All colors forced to black for reliable extraction
 - **Compact spacing** - Tighter margins for efficient page use
+- **Page-break control** - Job headers, summaries, bullets, condensed rows, and schools carry `break-inside: avoid`, a header never ends a page without its summary, and the Education section plus the footer URL move as one block. Do not rely on `orphans`/`widows` alone: Chrome ignores them whenever a box's own bottom padding is what overflows, and splits the paragraph anyway
+- **No job separator lines** - A job that opens a page would otherwise start with a stray rule
+- **Single-line condensed rows** - Additional Experience rows print as one line each so text extractors read title, employer, and dates together instead of column by column
 
 ## Generated Resume Files
 

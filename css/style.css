@@ -651,6 +651,16 @@ strong {
         max-width: none;
     }
 
+    /* Page-break control. Every small block below carries break-inside: avoid because
+       that is the only rule Chrome honours reliably: it ignores orphans/widows whenever
+       a box's own bottom padding is what fails to fit, and splits the paragraph anyway.
+       orphans/widows stay as a safety net for any text block not covered by an avoid. */
+    p,
+    li {
+        orphans: 3;
+        widows: 3;
+    }
+
     h1 {
         font-size: 16pt;
         margin-bottom: 2pt;
@@ -663,7 +673,7 @@ strong {
 
     h2 {
         font-size: 12pt;
-        page-break-after: avoid;
+        break-after: avoid;
         border-bottom: 1px solid var(--print-border);
         text-align: left !important;
         margin: 10pt 0 6pt;
@@ -671,7 +681,7 @@ strong {
     }
 
     h3 {
-        page-break-after: avoid;
+        break-after: avoid;
         margin: 0;
     }
 
@@ -705,9 +715,12 @@ strong {
         line-height: 1.3;
     }
 
-    /* Job header - tighter spacing */
+    /* Job header - tighter spacing. Title, employer, and dates never split, and never
+       end a page without the summary that follows them. */
     .job-header {
         margin-bottom: 4pt;
+        break-inside: avoid;
+        break-after: avoid;
     }
 
     .job-position {
@@ -725,10 +738,12 @@ strong {
         margin-top: 1pt;
     }
 
-    /* Job content */
+    /* Job content. No separator rule in print: a job that opens a page would otherwise
+       start with a stray line, and the whitespace plus bold title already marks the boundary. */
     .job {
         margin-bottom: 10pt;
         padding-top: 8pt;
+        border-top: none;
     }
 
     .job:first-of-type {
@@ -742,7 +757,7 @@ strong {
         padding: 4pt 0;
         margin: 0;
         font-size: 10pt;
-        page-break-inside: auto;
+        break-inside: avoid;
     }
 
     .job-highlights {
@@ -757,6 +772,7 @@ strong {
     li {
         font-size: 10pt;
         margin-bottom: 2pt;
+        break-inside: avoid;
     }
 
     /* ATS: Convert skill pills to comma-separated inline text */
@@ -782,7 +798,7 @@ strong {
 
     /* Skill category formatting */
     .skillset {
-        page-break-inside: avoid;
+        break-inside: avoid;
         margin-bottom: 4pt;
     }
 
@@ -792,7 +808,12 @@ strong {
         font-size: 9pt;
     }
 
-    /* ATS-friendly skill list for print */
+    /* ATS-friendly skill list for print. One column regardless of paper size: the
+       screen grid only collapses because Letter minus margins happens to be under 768px. */
+    .skillset-list-group {
+        display: block;
+    }
+
     .skillset-list {
         margin-bottom: 3pt;
         font-size: 10pt;
@@ -822,6 +843,19 @@ strong {
         font-size: 10pt;
         padding: 1pt 0;
         border-bottom: none;
+        break-inside: avoid;
+    }
+
+    /* One line per row, in DOM order. The screen grid centres the employer beside a
+       two-line title, and layout-aware text extractors then read the block column by
+       column, separating every title from its employer and dates. */
+    .earlier-job-header {
+        display: block;
+    }
+
+    .earlier-position::after {
+        content: ",";
+        font-weight: normal;
     }
 
     .earlier-job-toggle {
@@ -855,8 +889,15 @@ strong {
         margin-top: 4pt;
     }
 
+    /* Schools stay whole, and the section moves as one block rather than leaving a
+       heading or a lone date line behind. */
+    .education-section {
+        break-inside: avoid;
+    }
+
     .institution {
         margin-bottom: 4pt;
+        break-inside: avoid;
     }
 
     /* Remove link styling for print */
@@ -870,10 +911,12 @@ strong {
         display: none;
     }
 
-    /* Add URL at bottom of last page only */
+    /* Add URL at bottom of last page only. break-before keeps it glued to the Education
+       block above instead of landing alone on a fresh page. */
     .resume-container::after {
         content: "Online version: https://johnesco.github.io/resume";
         display: block;
+        break-before: avoid;
         text-align: center;
         font-size: 9pt;
         border-top: 1px solid var(--print-border);
