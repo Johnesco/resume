@@ -1,12 +1,15 @@
 #!/bin/sh
 # Refuse commits where files/autoresumes/ no longer matches the resume it was
-# generated from. See .githooks/check-generated-resumes.js for the actual check.
+# generated from, or where a staged PDF breaks a page across a job header.
+# See .githooks/check-generated-resumes.js and check-page-breaks.js.
 #
 # Enabled by: npm run hooks   (sets core.hooksPath to .githooks)
 
 if ! command -v node >/dev/null 2>&1; then
-	echo "pre-commit: node not found, skipping the generated-resume check" >&2
+	echo "pre-commit: node not found, skipping the generated-resume checks" >&2
 	exit 0
 fi
 
-exec node "$(git rev-parse --show-toplevel)/.githooks/check-generated-resumes.js"
+root="$(git rev-parse --show-toplevel)"
+node "$root/.githooks/check-generated-resumes.js" || exit 1
+exec node "$root/check-page-breaks.js" --staged --quiet

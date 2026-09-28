@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "resumes": "node generate-resumes.js",
+    "breaks": "node check-page-breaks.js",
     "hooks": "git config core.hooksPath .githooks"
   },
   "keywords": [],

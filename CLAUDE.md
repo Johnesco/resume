@@ -184,7 +184,7 @@ geeksiresume.html
 3. Check `plaintextresume.html` renders correctly
 4. Verify `customize.html` shows all tags and skills
 5. Use Print Preview (Ctrl+P) to verify ATS-friendly PDF output
-6. After `npm run resumes`, check where pages break: `pdftotext -layout files/autoresumes/EscobedoJohn_<profile>.pdf -` and read the last and first lines around each form feed. Nothing should end a page on a job title or start one on a lone date line
+6. Run `npm run breaks` to see where every generated PDF breaks across pages (`npm run resumes` runs it for you and fails on a bad break)
 
 ## Print/PDF Output (ATS-Optimized)
 
@@ -198,6 +198,8 @@ The `@media print` styles in `css/style.css` optimize PDF output for ATS parsing
 - **No job separator lines** - A job that opens a page would otherwise start with a stray rule
 - **Single-line condensed rows** - Additional Experience rows print as one line each so text extractors read title, employer, and dates together instead of column by column
 
+`npm run breaks` (alias for `node check-page-breaks.js`) reads every PDF in `files/autoresumes/` back through `pdftotext`, prints the lines on either side of every page break, and exits non-zero on a stranded or split job header, a split school entry, a paragraph or bullet split mid-sentence, a stranded section heading, or a last page holding only the footer URL. `npm run resumes` runs it after generating and the pre-commit hook runs it on staged PDFs. Pass profile keys to limit it, `--quiet` to see only the breaks that fail, or `--dir <folder>` for other PDFs. It needs `pdftotext` (poppler); Git for Windows ships it in `mingw64/bin`, and `PDFTOTEXT=<path>` overrides the lookup.
+
 ## Generated Resume Files
 
 `npm run resumes` (alias for `node generate-resumes.js`) renders `index.html?profile=<key>` for every profile in `resume-config.js` through headless Chrome and writes `files/autoresumes/EscobedoJohn_<profile>.pdf`. Pass profile keys to limit the run, e.g. `node generate-resumes.js qa-lead`.
@@ -206,12 +208,14 @@ The `@media print` styles in `css/style.css` optimize PDF output for ATS parsing
 - Everything in `files/autoresumes/` is machine-generated and overwritten on each run; files directly in `files/` are manual exports
 - These are the files the download buttons on `index.html` serve, so re-run after any resume data or config change
 - A full run also writes `files/autoresumes/generated.json`, a sha256 of every file in `INPUT_FILES` (the render path) plus the list of outputs. A filtered run leaves it alone, since only a full run can claim the folder is current
+- Every run ends with the page-break check from `check-page-breaks.js`. A bad break fails the command even though the files were written, so the download buttons never quietly serve a split job header
 
 ### Pre-commit Hook
 `.githooks/pre-commit` blocks commits that change the resume without regenerating the downloads. Enabled per clone with `npm run hooks` (sets `core.hooksPath`), so a fresh clone has to run that once.
 - The check is content-based: `.githooks/check-generated-resumes.js` hashes the **staged** content of each input in `generated.json` and compares. Staging a stale `files/autoresumes/` does not get past it
 - Both sides normalize CRLF to LF before hashing. Git stores blobs with LF while the Windows working copy holds CRLF, and a line ending never changes the rendered resume. **If you change hashing on one side, change it on the other**
 - It stays quiet on commits that touch nothing in the render path, and warns without blocking if `generated.json` is missing entirely
+- It then runs `check-page-breaks.js --staged --quiet` on any staged PDF, reading them from the index rather than the working copy, and warns without blocking when `pdftotext` is missing
 - `.gitattributes` pins `.githooks/**` to LF; CRLF makes `sh` reject the hook with "bad interpreter" on macOS and Linux
 - Adding a file that affects rendered output means adding it to `INPUT_FILES` in `generate-resumes.js`; the hook reads the list from the stamp, so it never drifts
 - Bypass with `git commit --no-verify`

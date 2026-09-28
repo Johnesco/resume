@@ -146,6 +146,8 @@ npm run resumes
 
 This renders `index.html?profile=<key>` for every profile through headless Chrome and writes `files/autoresumes/EscobedoJohn_<profile>.pdf`. The PDF uses the same `@media print` CSS a manual Ctrl+P would, so it *is* the print view. Pass profile keys to limit the run: `node generate-resumes.js qa-lead`.
 
+`npm run breaks` reads the PDFs back through `pdftotext` and fails on a page that splits or strands a job header, a school entry, or a sentence; `npm run resumes` runs it automatically.
+
 PDF only. Word output was dropped because `html-to-docx` laid the resume out too badly to send anyone; `files/` still holds manual `.docx` exports.
 
 Views built with `?years=`, `?additional=` or `?format=` have no matching generated file, so they hide the download and offer Print instead.
@@ -158,7 +160,7 @@ A stale file here reaches recruiters directly, so a pre-commit hook blocks commi
 npm run hooks
 ```
 
-The hook compares a sha256 of every render input against `files/autoresumes/generated.json`, which `npm run resumes` writes. Staging stale output does not get you past it. Bypass a false positive with `git commit --no-verify`.
+The hook compares a sha256 of every render input against `files/autoresumes/generated.json`, which `npm run resumes` writes. Staging stale output does not get you past it. Bypass a false positive with `git commit --no-verify`. The hook also checks the staged PDFs for bad page breaks.
 
 ---
 

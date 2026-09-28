@@ -20,6 +20,7 @@ const puppeteer = require('puppeteer');
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
+const { checkFiles } = require('./check-page-breaks');
 
 const SCRIPT_DIR = __dirname;
 const INDEX = path.join(SCRIPT_DIR, 'index.html');
@@ -77,6 +78,7 @@ async function main() {
   const pageMargin = readPrintPageMargin();
   console.log(`Page margin: ${pageMargin ? `${pageMargin} (from @page CSS)` : '(browser default)'}`);
 
+  const generated = [];
   const browser = await puppeteer.launch({ headless: true });
   try {
     const page = await browser.newPage();
@@ -114,6 +116,7 @@ async function main() {
         ...(pageMargin ? { margin: { top: pageMargin, right: pageMargin, bottom: pageMargin, left: pageMargin } } : {}),
       });
 
+      generated.push(pdfPath);
       const kb = (f) => (fs.statSync(f).size / 1024).toFixed(0);
       console.log(`  ✓ ${profile.padEnd(16)} PDF ${kb(pdfPath)}KB`);
     }
@@ -131,6 +134,18 @@ async function main() {
     }
   } finally {
     await browser.close();
+  }
+
+  // A PDF that strands a job header at the bottom of a page is not something the
+  // download buttons should hand out, so look at the page edges before calling the
+  // run done. Quiet mode prints only the breaks that fail; npm run breaks shows all.
+  console.log('');
+  const breaks = checkFiles(generated, { quiet: true });
+  if (breaks.missingTool) {
+    console.log('Page breaks not checked: pdftotext is unavailable (see check-page-breaks.js).');
+  } else if (breaks.bad) {
+    console.error('Bad page breaks. Fix the @media print rules in css/style.css and rerun; npm run breaks shows every page edge.');
+    process.exitCode = 1;
   }
   console.log(`\nDone. Files written to ${OUT_DIR}`);
 }
